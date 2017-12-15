@@ -1,1 +1,1 @@
-Esse projeto é um clone do trello personal
+Esse projeto é um clone do trello
