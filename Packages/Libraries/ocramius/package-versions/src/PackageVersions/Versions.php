@@ -80,7 +80,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.1.0@cb2f008f3f05af2893a87208fe6a6c4985483f8b',
   'webmozart/assert' => '1.2.0@2db61e59ff05fe5126d152bd0655c9ea113e550f',
-  'neos/flow-base-distribution' => '4.2.6@',
+  'neos/flow-base-distribution' => 'dev-master@788726ad868fa4966986e967ed5f5357490e9ee9',
 );
 
     private function __construct()
