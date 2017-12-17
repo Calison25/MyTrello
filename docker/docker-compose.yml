@@ -1,0 +1,10 @@
+version: '2'
+services:
+  trello:
+    build: .
+    container_name: 'trello'
+    ports:
+     - "1000:80"
+    volumes:
+     - ..:/var/www/trello
+    tty: true
