@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26629d65-6895-44af-838b-7f0857c85050" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/docker/trello_api/init.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/docker/trello_api/root/.bashrc" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/docker/Dockerfile" afterPath="$PROJECT_DIR$/docker/Dockerfile" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" />
+      <change beforePath="$PROJECT_DIR$/docker/trello_api/apache2/sites-available/trello.conf" afterPath="$PROJECT_DIR$/docker/trello_api/apache2/sites-available/trello.conf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,18 +20,38 @@
       <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+            <state relative-caret-position="36">
+              <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trello.conf" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".bashrc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker/trello_api/root/.bashrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="35" column="61" lean-forward="false" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trello.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker/trello_api/apache2/sites-available/trello.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -52,6 +75,7 @@
       <find>agilize</find>
       <find>\\First</find>
       <find>First</find>
+      <find>api</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -72,8 +96,10 @@
         <option value="$PROJECT_DIR$/Packages/Application/Testando.First/Classes/Command/TesteCommandController.php" />
         <option value="$PROJECT_DIR$/Packages/Application/Neos.Behat/Classes/Command/BehatCommandController.php" />
         <option value="$PROJECT_DIR$/docker/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/docker/trello_api/apache2/sites-available/trello.conf" />
+        <option value="$PROJECT_DIR$/docker/trello_api/init.sh" />
+        <option value="$PROJECT_DIR$/docker/Dockerfile" />
+        <option value="$PROJECT_DIR$/Web/index.php" />
       </list>
     </option>
   </component>
@@ -128,20 +154,17 @@
               <item name="trello" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="docker" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="trello_api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apache2" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="trello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trello" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="docker" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="trello_api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apache2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites-available" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="root" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="trello" type="b2602c69:ProjectViewProjectNode" />
               <item name="trello" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="trello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trello" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -158,6 +181,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docker/trello_api/root" />
+      <recent name="$PROJECT_DIR$/docker/trello_api" />
       <recent name="$PROJECT_DIR$/Packages/Application/Testando.First" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -193,12 +218,12 @@
       <workItem from="1513302085757" duration="682000" />
       <workItem from="1513455219216" duration="1516000" />
       <workItem from="1513478875620" duration="2754000" />
-      <workItem from="1513519195486" duration="9633000" />
+      <workItem from="1513519195486" duration="12943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14585000" />
+    <option name="totallyTimeSpent" value="17895000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="-4" width="1315" height="772" extended-state="6" />
@@ -351,7 +376,7 @@
         <state relative-caret-position="452">
           <caret line="96" column="5" lean-forward="false" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
           <folding>
-            <element signature="e#322#356#0#PHP" expanded="true" />
+            <element signature="e#322#356#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -372,6 +397,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Framework/Neos.Flow/Classes/Core/Bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3132">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/trello_api/init.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/trello_api/root/.bashrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="35" column="61" lean-forward="false" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docker/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -380,18 +429,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/docker/trello_api/apache2/sites-available/trello.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/trello_api/apache2/sites-available/trello.conf">
+    <entry file="file://$PROJECT_DIR$/docker/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
