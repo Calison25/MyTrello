@@ -16,6 +16,7 @@ RUN apt-get install -y php-gnupg php-imagick php-mongodb php-streams php-fxsl
 
 COPY trello_api/apache2/sites-available/trello.conf /etc/apache2/sites-available/000-default.conf
 COPY trello_api/root/.bashrc /root/.bashrc
+COPY trello_api/init.sh /usr/local/bin/
 
 RUN sed -i -e 's/max_execution_time = 30/max_execution_time = 300/g' /etc/php/7.0/apache2/php.ini
 RUN sed -i -e 's/upload_max_filesize = 2M/upload_max_filesize = 256M/g' /etc/php/7.0/apache2/php.ini
@@ -24,4 +25,6 @@ RUN sed -i -e 's/memory_limit = 128M/memory_limit = 1024]M/g' /etc/php/7.0/apach
 RUN sed -i -e 's/;date.timezone =/date.timezone = "America\/Bahia"/g' /etc/php/7.0/apache2/php.ini
 
 WORKDIR /var/www/trello/
+ENTRYPOINT ["/bin/bash"]
+CMD ["/usr/local/bin/init.sh"]
 EXPOSE 80
