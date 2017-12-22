@@ -1,7 +1,7 @@
 version: '2'
 services:
   trello_api:
-    build: .
+    build: ""
     container_name: 'trello_api'
     ports:
      - "3000:80"
