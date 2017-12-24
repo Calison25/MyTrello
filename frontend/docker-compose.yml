@@ -1,0 +1,9 @@
+version: '2'
+services:
+  trello_webapp:
+    build: .
+    ports:
+      - '5000:3000'
+    volumes:
+      - ./:/usr/src/trello
+      - /usr/src/trello/node_modules
