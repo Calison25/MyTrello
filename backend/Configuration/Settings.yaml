@@ -19,7 +19,7 @@ Neos:
       # connection in this global Settings.yaml file. Rather specify them in the
       # settings of the respective context (Production / Development ...).
       backendOptions:
-        host: 'db'    # adjust to your database host
+        host: 'trello_db'    # adjust to your database host
         dbname: 'trello'
         user: 'root'
         password: 'senhaforte'
