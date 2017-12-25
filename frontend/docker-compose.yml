@@ -2,6 +2,7 @@ version: '2'
 services:
   trello_webapp:
     build: .
+    container_name: 'trello_webapp'
     ports:
       - '5000:3000'
     volumes:
