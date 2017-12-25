@@ -1,6 +1,6 @@
-/Data/
-/Web/
-/bin/
-/Readme.rst
-/Upgrading.rst
+/backend/Data/
+/backend/Web/
+/backend/bin/
+/backend/Readme.rst
+/backend/Upgrading.rst
 .idea/
