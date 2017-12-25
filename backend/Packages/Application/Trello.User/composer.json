@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "trello/user",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Trello\\User\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Trello.User"
+        }
+    }
+}

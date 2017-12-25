@@ -806,74 +806,6 @@ return array (
       array (
       ),
     ),
-    'sebastian/comparator' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.comparator',
-      'packagePath' => 'Libraries/sebastian/comparator/',
-      'composerName' => 'sebastian/comparator',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/object-reflector' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.objectreflector',
-      'packagePath' => 'Libraries/sebastian/object-reflector/',
-      'composerName' => 'sebastian/object-reflector',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/object-enumerator' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.objectenumerator',
-      'packagePath' => 'Libraries/sebastian/object-enumerator/',
-      'composerName' => 'sebastian/object-enumerator',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/code-unit-reverse-lookup' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.codeunitreverselookup',
-      'packagePath' => 'Libraries/sebastian/code-unit-reverse-lookup/',
-      'composerName' => 'sebastian/code-unit-reverse-lookup',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'neos/eel' => 
     array (
       'state' => 'active',
@@ -952,6 +884,23 @@ return array (
         'pathAndFilename' => 'Classes/Package.php',
       ),
     ),
+    'trello/user' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Trello.User',
+      'packagePath' => 'Application/Trello.User/',
+      'composerName' => 'trello/user',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Trello\\User\\' => 'Classes/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'neos/welcome' => 
     array (
       'state' => 'active',
@@ -980,6 +929,74 @@ return array (
         'psr-4' => 
         array (
           'Neos\\Behat\\' => 'Classes',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/comparator' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.comparator',
+      'packagePath' => 'Libraries/sebastian/comparator/',
+      'composerName' => 'sebastian/comparator',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/object-reflector' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.objectreflector',
+      'packagePath' => 'Libraries/sebastian/object-reflector/',
+      'composerName' => 'sebastian/object-reflector',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/object-enumerator' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.objectenumerator',
+      'packagePath' => 'Libraries/sebastian/object-enumerator/',
+      'composerName' => 'sebastian/object-enumerator',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/code-unit-reverse-lookup' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.codeunitreverselookup',
+      'packagePath' => 'Libraries/sebastian/code-unit-reverse-lookup/',
+      'composerName' => 'sebastian/code-unit-reverse-lookup',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 
