@@ -1,0 +1,8 @@
+-
+  name: 'Create user'
+  uriPattern: 'create-user'
+  defaults:
+    '@package': 'Trello.User'
+    '@controller': 'User'
+    '@action': 'create'
+  httpMethods: ['GET']
