@@ -2,20 +2,23 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const url = 'http://localhost:1000/index.php/create-user';
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    render() {
+        callUrl();
+        return 'passou';
+    }
+}
+
+function callUrl(){
+    fetch(url)
+        .then(function() {
+            console.log("ok");
+        }).catch(function(error) {
+        console.log(error);
+    });
 }
 
 export default App;

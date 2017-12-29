@@ -4,7 +4,7 @@ services:
     build: ""
     container_name: 'trello_api'
     ports:
-     - "3000:80"
+     - "1000:80"
     volumes:
      - ..:/var/www/trello
   trello_db:
