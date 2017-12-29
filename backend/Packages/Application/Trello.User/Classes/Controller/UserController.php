@@ -10,17 +10,20 @@ use Neos\Flow\Mvc\Controller\ActionController;
 
 class UserController extends ActionController
 {
+
     /**
-     *
+     * @var \UserFactory
+     * @Flow\Inject
      */
-    public function createAction()
+    protected $userFactory;
+
+    /**
+     * @param array $data
+     */
+    public function createAction($data)
     {
-        echo 'here!!!';
-        die;
-//        $this->response->setHeader('Access-Control-Allow-Origin', '*');
-////        $this->response->setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
-////        $this->response->setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type, X-HTTP-Method-Override, accept, key, Authorization');
-////        $this->response->setHeader('Access-Control-Max-Age', '3600');
+        $result = $this->userFactory->create($data);
+
 //        $this->view->setVariablesToRender('response');
 //        $this->response->setStatus(200);
 //        $this->view->assign('response', 'funcionou');
