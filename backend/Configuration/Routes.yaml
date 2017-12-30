@@ -5,4 +5,4 @@
     '@package': 'Trello.User'
     '@controller': 'User'
     '@action': 'create'
-  httpMethods: ['GET']
+  httpMethods: ['POST']

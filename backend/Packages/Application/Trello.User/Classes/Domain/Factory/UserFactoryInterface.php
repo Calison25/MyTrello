@@ -1,4 +1,8 @@
 <?php
+
+namespace Trello\User\Domain\Factory;
+use Trello\User\Domain\Model\User;
+
 /**
  * Created by PhpStorm.
  * User: calison
@@ -10,21 +14,21 @@ interface UserFactoryInterface
 {
 
     /**
-     * @param array $data
-     * @return boolean
+     * @param User $user
+     * @return mixed
      */
-    public function create(array $data);
+    public function create(User $user);
 
     /**
      * @param string $username
      * @param array $data
-     * @return boolean
+     * @return User
      */
     public function edit($username, $data);
 
     /**
      * @param string $username
-     * @return boolean
+     * @return User
      */
     public function delete($username);
 }

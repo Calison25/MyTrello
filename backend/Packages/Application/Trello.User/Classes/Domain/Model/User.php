@@ -1,4 +1,5 @@
 <?php
+
 namespace Trello\User\Domain\Model;
 
 /*

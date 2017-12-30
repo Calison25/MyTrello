@@ -1,4 +1,11 @@
 <?php
+
+namespace Trello\User\Domain\Factory;
+
+use Neos\Flow\Annotations as Flow;
+use Trello\User\Domain\Model\User;
+use Trello\User\Service\UserService;
+
 /**
  * Created by PhpStorm.
  * User: calison
@@ -10,18 +17,35 @@ class UserFactory implements UserFactoryInterface
 {
 
     /**
-     * @param array $data
-     * @return bool|void
+     * @var UserService
+     * @Flow\Inject
      */
-    public function create(array $data)
+    protected $userService;
+
+    /**
+     * @param User $user
+     * @return mixed|void
+     */
+    public function create(User $user)
     {
-        // TODO: Implement create() method.
+//        if(isset($data['username'])){
+//            $user = $this->userService->getUserByUsername($data['username']);
+//
+//            if($user instanceof \Trello\User\Domain\Model\User){
+//                throw new \Trello\User\Exception\UserAlreadyExistException('Username já existe', 1514553949);
+//            }
+//
+//            //criar usuário;
+//
+//        }
+//
+//        throw new \Trello\User\Exception\UsernameIsRequiredException('Username não informado',1514553197);
     }
 
     /**
      * @param string $username
      * @param array $data
-     * @return bool|void
+     * @return User|void
      */
     public function edit($username, $data)
     {
@@ -30,7 +54,7 @@ class UserFactory implements UserFactoryInterface
 
     /**
      * @param string $username
-     * @return bool|void
+     * @return User|void
      */
     public function delete($username)
     {
