@@ -7,6 +7,7 @@ namespace Trello\User\Controller;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\Controller\ActionController;
+use Trello\Helper\Service\RequestHelper;
 use Trello\User\Domain\Factory\UserFactory;
 use Trello\User\Domain\Model\User;
 use Trello\User\Exception\Exception;
@@ -22,15 +23,21 @@ class UserController extends ActionController
     protected $userFactory;
 
     /**
-     * @param User $user
+     * @var RequestHelper
+     * @Flow\Inject
      */
-    public function createAction(User $user)
+    protected $requestHelper;
+
+    /**
+     * @param array $data
+     */
+    public function createAction(array $data)
     {
-
-        var_dump($user->getName());
-        die;
-
         try{
+            /**
+             * @var User $user
+             */
+            $user = $this->requestHelper->createObjectFromRequest(User::class, $data);
             $createdUser = $this->userFactory->create($user);
         }catch (UserAlreadyExistException $e){
 

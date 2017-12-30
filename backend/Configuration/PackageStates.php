@@ -789,23 +789,6 @@ return array (
       array (
       ),
     ),
-    'sebastian/diff' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.diff',
-      'packagePath' => 'Libraries/sebastian/diff/',
-      'composerName' => 'sebastian/diff',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'neos/eel' => 
     array (
       'state' => 'active',
@@ -884,23 +867,6 @@ return array (
         'pathAndFilename' => 'Classes/Package.php',
       ),
     ),
-    'trello/user' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'Trello.User',
-      'packagePath' => 'Application/Trello.User/',
-      'composerName' => 'trello/user',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'Trello\\User\\' => 'Classes/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'neos/welcome' => 
     array (
       'state' => 'active',
@@ -929,6 +895,57 @@ return array (
         'psr-4' => 
         array (
           'Neos\\Behat\\' => 'Classes',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'trello/user' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Trello.User',
+      'packagePath' => 'Application/Trello.User/',
+      'composerName' => 'trello/user',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Trello\\User\\' => 'Classes/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'trello/helper' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Trello.Helper',
+      'packagePath' => 'Application/Trello.Helper/',
+      'composerName' => 'trello/helper',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Trello\\Helper\\' => 'Classes/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/diff' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.diff',
+      'packagePath' => 'Libraries/sebastian/diff/',
+      'composerName' => 'sebastian/diff',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 

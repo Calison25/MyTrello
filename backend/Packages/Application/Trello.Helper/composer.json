@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "trello/helper",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Trello\\Helper\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Trello.Helper"
+        }
+    }
+}
