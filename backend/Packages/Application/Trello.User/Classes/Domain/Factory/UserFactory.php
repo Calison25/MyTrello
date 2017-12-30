@@ -4,6 +4,8 @@ namespace Trello\User\Domain\Factory;
 
 use Neos\Flow\Annotations as Flow;
 use Trello\User\Domain\Model\User;
+use Trello\User\Exception\UserAlreadyExistException;
+use Trello\User\Exception\UsernameIsRequiredException;
 use Trello\User\Service\UserService;
 
 /**
@@ -23,23 +25,25 @@ class UserFactory implements UserFactoryInterface
     protected $userService;
 
     /**
-     * @param User $user
-     * @return mixed|void
+     * @param array $data
+     * @return User
+     * @throws UserAlreadyExistException
+     * @throws UsernameIsRequiredException
      */
-    public function create(User $user)
+    public function create(array $data)
     {
-//        if(isset($data['username'])){
-//            $user = $this->userService->getUserByUsername($data['username']);
-//
-//            if($user instanceof \Trello\User\Domain\Model\User){
-//                throw new \Trello\User\Exception\UserAlreadyExistException('Username já existe', 1514553949);
-//            }
-//
-//            //criar usuário;
-//
-//        }
-//
-//        throw new \Trello\User\Exception\UsernameIsRequiredException('Username não informado',1514553197);
+        if(isset($data['username']) && isset($data['email'])){
+            $newUser = new User($data);
+            $user = $this->userService->getUserByRequiredFields($newUser);
+
+            if($user instanceof User){
+                throw new UserAlreadyExistException('Username já existe', 1514553949);
+            }
+
+            return $newUser;
+        }
+
+        throw new UsernameIsRequiredException('Nome de usuário e email são obrigatórios',1514553197);
     }
 
     /**

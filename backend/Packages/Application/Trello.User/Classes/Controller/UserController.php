@@ -10,6 +10,7 @@ use Neos\Flow\Mvc\Controller\ActionController;
 use Trello\Helper\Service\RequestHelper;
 use Trello\User\Domain\Factory\UserFactory;
 use Trello\User\Domain\Model\User;
+use Trello\User\Domain\Repository\UserRepository;
 use Trello\User\Exception\Exception;
 use Trello\User\Exception\UserAlreadyExistException;
 use Trello\User\Exception\UsernameIsRequiredException;
@@ -29,16 +30,24 @@ class UserController extends ActionController
     protected $requestHelper;
 
     /**
+     * @var UserRepository
+     * @Flow\Inject
+     */
+    protected $userRepository;
+
+    /**
      * @param array $data
+     * @throws \Neos\Flow\Persistence\Exception\IllegalObjectTypeException
      */
     public function createAction(array $data)
     {
         try{
-            /**
-             * @var User $user
-             */
-            $user = $this->requestHelper->createObjectFromRequest(User::class, $data);
-            $createdUser = $this->userFactory->create($user);
+            $convertedData = $this->requestHelper->convertRequestToArray($data);
+            $createdUser = $this->userFactory->create($convertedData);
+            $this->userRepository->add($createdUser);
+
+            $this->response->setStatus(200);
+            $this->view->assign('response', 'funcionou');
         }catch (UserAlreadyExistException $e){
 
         }catch (UsernameIsRequiredException $e){
@@ -47,10 +56,5 @@ class UserController extends ActionController
         catch (Exception $e){
 
         }
-
-
-//        $this->view->setVariablesToRender('response');
-//        $this->response->setStatus(200);
-//        $this->view->assign('response', 'funcionou');
     }
 }

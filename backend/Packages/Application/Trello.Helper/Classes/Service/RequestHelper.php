@@ -13,23 +13,18 @@ class RequestHelper
 {
 
     /**
-     * @param $class
      * @param $request
-     * @param bool $hasArguments
      * @return mixed
      */
-    public function createObjectFromRequest($class, $request, $hasArguments = true)
+    public function convertRequestToArray($request)
     {
         $request = json_decode(implode(",",$request));
         $arguments = [];
 
-        if($hasArguments){
-            foreach ($request as $index => $value){
-                $arguments[$index] = $value;
-            }
-            return new $class($arguments);
+        foreach ($request as $index => $value){
+            $arguments[$index] = $value;
         }
 
-        return new $class();
+        return $arguments;
     }
 }

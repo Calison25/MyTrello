@@ -2,6 +2,10 @@
 
 namespace Trello\User\Service;
 
+use Neos\Flow\Annotations as Flow;
+use Trello\User\Domain\Model\User;
+use Trello\User\Domain\Repository\UserRepository;
+
 /**
  * Created by PhpStorm.
  * User: calison
@@ -12,9 +16,18 @@ namespace Trello\User\Service;
 class UserService
 {
 
+    /**
+     * @var UserRepository
+     * @Flow\Inject
+     */
+    protected $userRepository;
 
-    public function getUserByUsername()
+    /**
+     * @param User $user
+     * @return object
+     */
+    public function getUserByRequiredFields(User $user)
     {
-
+        return $this->userRepository->findUserByUsernameAndEmail($user->getUsername(), $user->getEmail());
     }
 }

@@ -14,10 +14,10 @@ interface UserFactoryInterface
 {
 
     /**
-     * @param User $user
-     * @return mixed
+     * @param array $data
+     * @return User
      */
-    public function create(User $user);
+    public function create(array $data);
 
     /**
      * @param string $username

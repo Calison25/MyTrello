@@ -18,4 +18,20 @@ use Neos\Flow\Persistence\Repository;
 class UserRepository extends Repository
 {
 
+    /**
+     * @param $username
+     * @param $email
+     * @return object
+     */
+    public function findUserByUsernameAndEmail($username, $email)
+    {
+        $query = $this->createQuery();
+
+        $result = $query->matching(
+            $query->equals('username', $username),
+            $query->equals('email', $email)
+        );
+
+        return $result->execute()->getFirst();
+    }
 }
