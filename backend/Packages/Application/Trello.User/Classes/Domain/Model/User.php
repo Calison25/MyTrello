@@ -42,7 +42,7 @@ class User
     public function __construct($data)
     {
         $this->setName($data['name']);
-        $this->setPassword($data['password']);
+        $this->setPassword(md5($data['password']));
         $this->setUsername($data['username']);
         $this->setEmail($data['email']);
     }

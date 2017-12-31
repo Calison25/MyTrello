@@ -28,8 +28,10 @@ class UserRepository extends Repository
         $query = $this->createQuery();
 
         $result = $query->matching(
-            $query->equals('username', $username),
-            $query->equals('email', $email)
+            $query->logicalOr([
+                $query->equals('username', $username),
+                $query->equals('email', $email)
+            ])
         );
 
         return $result->execute()->getFirst();

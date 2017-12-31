@@ -24,10 +24,16 @@ class UserService
 
     /**
      * @param User $user
-     * @return object
+     * @return bool
      */
-    public function getUserByRequiredFields(User $user)
+    public function userIsRegistered(User $user)
     {
-        return $this->userRepository->findUserByUsernameAndEmail($user->getUsername(), $user->getEmail());
+        $user = $this->userRepository->findUserByUsernameAndEmail($user->getUsername(), $user->getEmail());
+
+        if($user instanceof User){
+            return true;
+        }
+
+        return false;
     }
 }

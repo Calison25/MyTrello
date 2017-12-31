@@ -34,10 +34,9 @@ class UserFactory implements UserFactoryInterface
     {
         if(isset($data['username']) && isset($data['email'])){
             $newUser = new User($data);
-            $user = $this->userService->getUserByRequiredFields($newUser);
 
-            if($user instanceof User){
-                throw new UserAlreadyExistException('Username já existe', 1514553949);
+            if($this->userService->userIsRegistered($newUser)){
+                throw new UserAlreadyExistException('Usuário já existe', 1514553949);
             }
 
             return $newUser;
