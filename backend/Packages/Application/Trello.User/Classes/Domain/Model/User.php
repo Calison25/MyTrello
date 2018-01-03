@@ -8,6 +8,7 @@ namespace Trello\User\Domain\Model;
 
 use Neos\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @Flow\Entity
@@ -21,30 +22,32 @@ class User
     protected $name;
 
     /**
-     * @var string
-     * @Flow\Validate(type="NotEmpty")
+     * @var Credential
+     * @ORM\OneToOne
      */
-    protected $password;
+    protected $credential;
 
     /**
-     * @var string
-     * @Flow\Validate(type="NotEmpty")
+     * @var \DateTime
+     * @Gedmo\Timestampable(on="create")
      */
-    protected $username;
+    protected $createdAt;
 
     /**
-     * @var string
-     * @Flow\Validate(type="NotEmpty")
+     * @var \DateTime
+     * @Gedmo\Timestampable(on="update")
      */
-    protected $email;
+    protected $updatedAt;
 
-
-    public function __construct($data)
+    /**
+     * User constructor.
+     * @param $name
+     * @param Credential $credential
+     */
+    public function __construct($name, Credential $credential)
     {
-        $this->setName($data['name']);
-        $this->setPassword(md5($data['password']));
-        $this->setUsername($data['username']);
-        $this->setEmail($data['email']);
+        $this->setName($name);
+        $this->setCredential($credential);
     }
 
     /**
@@ -64,50 +67,20 @@ class User
     }
 
     /**
-     * @return string
+     * @return Credential
      */
-    public function getPassword()
+    public function getCredential()
     {
-        return $this->password;
+        return $this->credential;
     }
 
     /**
-     * @param string $password
+     * @param Credential $credential
      */
-    public function setPassword($password)
+    public function setCredential($credential)
     {
-        $this->password = $password;
+        $this->credential = $credential;
     }
 
-    /**
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
 
-    /**
-     * @param string $username
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
 }

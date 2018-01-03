@@ -21,19 +21,4 @@ class UserService
      * @Flow\Inject
      */
     protected $userRepository;
-
-    /**
-     * @param User $user
-     * @return bool
-     */
-    public function userIsRegistered(User $user)
-    {
-        $user = $this->userRepository->findUserByUsernameAndEmail($user->getUsername(), $user->getEmail());
-
-        if($user instanceof User){
-            return true;
-        }
-
-        return false;
-    }
 }

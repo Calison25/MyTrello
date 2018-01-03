@@ -11,6 +11,7 @@ namespace PackageVersions;
 final class Versions
 {
     const VERSIONS = array (
+  'behat/transliterator' => 'v1.2.0@826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c',
   'doctrine/annotations' => 'v1.4.0@54cacc9b81758b14e3ce750f205a393d52339e97',
   'doctrine/cache' => 'v1.6.2@eb152c5100571c7a45470ff2a35095ab3f3b900b',
   'doctrine/collections' => 'v1.4.0@1a4fb7e902202c33cce8c55989b945612943c2ba',
@@ -21,6 +22,7 @@ final class Versions
   'doctrine/lexer' => 'v1.0.1@83893c552fd2045dd78aef794c31e694c37c0b8c',
   'doctrine/migrations' => 'v1.3.1@fda27fc96d20a1abd46d4526387c7d6d416da263',
   'doctrine/orm' => 'v2.5.14@810a7baf81462a5ddf10e8baa8cb94b6eec02754',
+  'gedmo/doctrine-extensions' => 'v2.4.32@a268224b312353be62d72e6390a286f4166a7542',
   'neos/cache' => '4.2.6@cbf09dcb2317e10ee7679a24a9dbbe1d3c4f421f',
   'neos/composer-plugin' => '2.0.1@cd20e3c9b548127f4fa1e0f31662072bf82250d4',
   'neos/eel' => '4.2.6@4b560851677f30fb2a4ffedf7a663ddb36e57293',
@@ -80,7 +82,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.1.0@cb2f008f3f05af2893a87208fe6a6c4985483f8b',
   'webmozart/assert' => '1.2.0@2db61e59ff05fe5126d152bd0655c9ea113e550f',
-  'neos/flow-base-distribution' => 'dev-master@2c3cf7d9967fd889aae0c0ebc6ce7ddd7bfc225b',
+  'neos/flow-base-distribution' => 'dev-master@c7b6fa8c3a62b48b3660a18128e0b284fe68d4ac',
 );
 
     private function __construct()

@@ -704,6 +704,40 @@ return array (
       array (
       ),
     ),
+    'behat/transliterator' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Behat.Transliterator',
+      'packagePath' => 'Libraries/behat/transliterator/',
+      'composerName' => 'behat/transliterator',
+      'autoloadConfiguration' => 
+      array (
+        'psr-0' => 
+        array (
+          'Behat\\Transliterator' => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'gedmo/doctrine-extensions' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'gedmo.doctrineextensions',
+      'packagePath' => 'Libraries/gedmo/doctrine-extensions/',
+      'composerName' => 'gedmo/doctrine-extensions',
+      'autoloadConfiguration' => 
+      array (
+        'psr-0' => 
+        array (
+          'Gedmo\\' => 'lib/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'theseer/tokenizer' => 
     array (
       'state' => 'active',
@@ -761,23 +795,6 @@ return array (
       'packageKey' => 'sebastian.resourceoperations',
       'packagePath' => 'Libraries/sebastian/resource-operations/',
       'composerName' => 'sebastian/resource-operations',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/version' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.version',
-      'packagePath' => 'Libraries/sebastian/version/',
-      'composerName' => 'sebastian/version',
       'autoloadConfiguration' => 
       array (
         'classmap' => 
@@ -929,6 +946,23 @@ return array (
         'psr-4' => 
         array (
           'Trello\\Helper\\' => 'Classes/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/version' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.version',
+      'packagePath' => 'Libraries/sebastian/version/',
+      'composerName' => 'sebastian/version',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 

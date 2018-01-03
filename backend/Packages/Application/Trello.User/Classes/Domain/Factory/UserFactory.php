@@ -6,6 +6,7 @@ use Neos\Flow\Annotations as Flow;
 use Trello\User\Domain\Model\User;
 use Trello\User\Exception\UserAlreadyExistException;
 use Trello\User\Exception\UsernameIsRequiredException;
+use Trello\User\Service\CredentialService;
 use Trello\User\Service\UserService;
 
 /**
@@ -25,24 +26,25 @@ class UserFactory implements UserFactoryInterface
     protected $userService;
 
     /**
+     * @var CredentialFactory
+     * @Flow\Inject
+     */
+    protected $credentialFactory;
+
+    /**
      * @param array $data
      * @return User
      * @throws UserAlreadyExistException
      * @throws UsernameIsRequiredException
+     * @throws \Neos\Flow\Persistence\Exception\IllegalObjectTypeException
+     * @throws \Trello\User\Exception\EmailIsNotValidException
      */
     public function create(array $data)
     {
-        if(isset($data['username']) && isset($data['email'])){
-            $newUser = new User($data);
+        $credential = $this->credentialFactory->create($data);
+        $newUser = new User($data, $credential);
 
-            if($this->userService->userIsRegistered($newUser)){
-                throw new UserAlreadyExistException('Usuário já existe', 1514553949);
-            }
-
-            return $newUser;
-        }
-
-        throw new UsernameIsRequiredException('Nome de usuário e email são obrigatórios',1514553197);
+        return $newUser;
     }
 
     /**

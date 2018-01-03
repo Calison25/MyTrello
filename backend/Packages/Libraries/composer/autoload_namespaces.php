@@ -9,8 +9,10 @@ return array(
     'org\\bovigo\\vfs\\' => array($vendorDir . '/mikey179/vfsStream/src/main/php'),
     'ProxyManager\\' => array($vendorDir . '/ocramius/proxy-manager/src'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
+    'Gedmo\\' => array($vendorDir . '/gedmo/doctrine-extensions/lib'),
     'Doctrine\\ORM\\' => array($vendorDir . '/doctrine/orm/lib'),
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
+    'Behat\\Transliterator' => array($vendorDir . '/behat/transliterator/src'),
 );

@@ -242,6 +242,13 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
             ),
         ),
+        'G' => 
+        array (
+            'Gedmo\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/gedmo/doctrine-extensions/lib',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\ORM\\' => 
@@ -259,6 +266,13 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
             'Doctrine\\Common\\Collections\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
+        ),
+        'B' => 
+        array (
+            'Behat\\Transliterator' => 
+            array (
+                0 => __DIR__ . '/..' . '/behat/transliterator/src',
             ),
         ),
     );
