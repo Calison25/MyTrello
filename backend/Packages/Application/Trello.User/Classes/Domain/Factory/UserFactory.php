@@ -42,7 +42,7 @@ class UserFactory implements UserFactoryInterface
     public function create(array $data)
     {
         $credential = $this->credentialFactory->create($data);
-        $newUser = new User($data, $credential);
+        $newUser = new User($data['name'], $credential);
 
         return $newUser;
     }

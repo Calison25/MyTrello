@@ -23,6 +23,11 @@ Neos:
         dbname: 'trello'
         user: 'root'
         password: 'senhaforte'
+      doctrine:
+        eventListeners:
+          -
+            events: ['onFlush', 'loadClassMetadata', 'prePersist']
+            listener: 'Gedmo\Timestampable\TimestampableListener'
 
     # The following lines register the Flow default routes
     # For productive use you should move this setting to the main package of this

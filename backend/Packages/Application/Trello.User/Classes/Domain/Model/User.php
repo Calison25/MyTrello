@@ -30,12 +30,14 @@ class User
     /**
      * @var \DateTime
      * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
      */
     protected $createdAt;
 
     /**
      * @var \DateTime
-     * @Gedmo\Timestampable(on="update")
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
      */
     protected $updatedAt;
 
@@ -81,6 +83,4 @@ class User
     {
         $this->credential = $credential;
     }
-
-
 }
