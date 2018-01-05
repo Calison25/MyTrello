@@ -15,4 +15,6 @@ class UserMessages
 {
 
     const CREATE_USER = 'Usuário criado com sucesso';
+
+    const UPDATED_USER = 'Usuário foi atualizado com sucesso';
 }

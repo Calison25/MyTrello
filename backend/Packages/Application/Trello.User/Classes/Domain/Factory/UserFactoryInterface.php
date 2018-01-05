@@ -17,14 +17,14 @@ interface UserFactoryInterface
      * @param array $data
      * @return User
      */
-    public function create(array $data);
+    public function create($data);
 
     /**
-     * @param string $username
+     * @param User $user
      * @param array $data
-     * @return User
+     * @return mixed
      */
-    public function edit($username, $data);
+    public function update(User $user, $data);
 
     /**
      * @param string $username

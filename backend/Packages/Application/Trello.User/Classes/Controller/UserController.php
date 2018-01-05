@@ -11,6 +11,7 @@ use Neos\Flow\Mvc\View\JsonView;
 use Trello\Helper\Service\RequestHelper;
 use Trello\Helper\Service\ViewHelper;
 use Trello\User\Domain\Factory\UserFactory;
+use Trello\User\Domain\Model\User;
 use Trello\User\Domain\Repository\UserRepository;
 use Trello\User\Exception\Exception;
 use Trello\User\Exception\UserAlreadyExistException;
@@ -51,7 +52,6 @@ class UserController extends ActionController
      */
     public function createAction(array $data)
     {
-        $createdUser = null;
         $this->view->setVariablesToRender(['response']);
         try{
             $convertedData = $this->requestHelper->convertRequestToArray($data);
@@ -75,7 +75,32 @@ class UserController extends ActionController
             $success = false;
         }
 
-        $response = $this->viewHelper->buildViewAssign($message, $success, $createdUser);
+        $response = $this->viewHelper->buildViewAssign($message, $success);
+        $this->view->assign('response', $response);
+    }
+
+
+    /**
+     * @param User $user
+     * @param $data
+     */
+    public function updateAction(User $user, $data)
+    {
+        try{
+            $convertedData = $this->requestHelper->convertRequestToArray($data);
+            $updatedUser = $this->userFactory->update($user, $convertedData);
+
+            $this->response->setStatus(200);
+            $this->userRepository->update($updatedUser);
+            $message = UserMessages::UPDATED_USER;
+            $success = true;
+        }catch (\Exception $e){
+            $this->response->setStatus(400);
+            $message = $e->getMessage();
+            $success = false;
+        }
+
+        $response = $this->viewHelper->buildViewAssign($message, $success);
         $this->view->assign('response', $response);
     }
 }

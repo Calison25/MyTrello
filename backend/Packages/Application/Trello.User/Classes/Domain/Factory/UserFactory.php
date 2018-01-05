@@ -39,7 +39,7 @@ class UserFactory implements UserFactoryInterface
      * @throws \Neos\Flow\Persistence\Exception\IllegalObjectTypeException
      * @throws \Trello\User\Exception\EmailIsNotValidException
      */
-    public function create(array $data)
+    public function create($data)
     {
         $credential = $this->credentialFactory->create($data);
         $newUser = new User($data['name'], $credential);
@@ -48,13 +48,13 @@ class UserFactory implements UserFactoryInterface
     }
 
     /**
-     * @param string $username
+     * @param User $user
      * @param array $data
-     * @return User|void
+     * @return mixed|void
      */
-    public function edit($username, $data)
+    public function update(User $user, $data)
     {
-        // TODO: Implement edit() method.
+
     }
 
     /**

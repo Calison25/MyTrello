@@ -13,15 +13,13 @@ class ViewHelper
     /**
      * @param string $message
      * @param boolean $success
-     * @param $data
      * @return array
      */
-    public function buildViewAssign($message, $success, $data = null)
+    public function buildViewAssign($message, $success)
     {
         $result = [
             "message" => $message,
-            "success" => $success,
-            "data" => $data
+            "success" => $success
         ];
 
         return $result;
