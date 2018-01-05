@@ -82,10 +82,12 @@ class UserController extends ActionController
 
     /**
      * @param User $user
-     * @param $data
+     * @param array $data
      */
     public function updateAction(User $user, $data)
     {
+        $this->view->setVariablesToRender(['response']);
+
         try{
             $convertedData = $this->requestHelper->convertRequestToArray($data);
             $updatedUser = $this->userFactory->update($user, $convertedData);

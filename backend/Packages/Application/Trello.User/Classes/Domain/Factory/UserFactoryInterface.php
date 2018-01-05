@@ -22,7 +22,7 @@ interface UserFactoryInterface
     /**
      * @param User $user
      * @param array $data
-     * @return mixed
+     * @return User
      */
     public function update(User $user, $data);
 

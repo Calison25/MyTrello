@@ -50,11 +50,20 @@ class UserFactory implements UserFactoryInterface
     /**
      * @param User $user
      * @param array $data
-     * @return mixed|void
+     * @return User
+     * @throws UserAlreadyExistException
+     * @throws UsernameIsRequiredException
+     * @throws \Neos\Flow\Persistence\Exception\IllegalObjectTypeException
+     * @throws \Trello\User\Exception\EmailIsNotValidException
      */
     public function update(User $user, $data)
     {
+        $newUser = $this->create($data);
 
+        $user->setName($newUser->getName());
+        $user->setCredential($newUser->getCredential());
+
+        return $user;
     }
 
     /**
@@ -65,5 +74,4 @@ class UserFactory implements UserFactoryInterface
     {
         // TODO: Implement delete() method.
     }
-
 }

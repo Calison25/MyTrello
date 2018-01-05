@@ -6,3 +6,12 @@
     '@controller': 'User'
     '@action': 'create'
   httpMethods: ['POST']
+
+-
+  name: 'Update User'
+  uriPattern: 'update-user'
+  defaults:
+    '@package': 'Trello.User'
+    '@controller': 'User'
+    '@action': 'update'
+  httpMethods: ['POST']
