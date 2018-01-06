@@ -7,7 +7,7 @@ use Trello\Helper\Service\GeneralHelper;
 use Trello\User\Domain\Model\Credential;
 use Trello\User\Domain\Repository\CredentialRepository;
 use Trello\User\Exception\EmailIsNotValidException;
-use Trello\User\Exception\UserAlreadyExistException;
+use Trello\User\Exception\UserAlreadyRegisteredException;
 use Trello\User\Exception\UsernameIsRequiredException;
 
 /**
@@ -36,21 +36,21 @@ class CredentialService
     /**
      * @param Credential $credential
      * @throws EmailIsNotValidException
-     * @throws UserAlreadyExistException
+     * @throws UserAlreadyRegisteredException
      * @throws UsernameIsRequiredException
      */
     public function credentialIsValid(Credential $credential)
     {
         if($this->credentialIsRegistered($credential)){
-            throw new UserAlreadyExistException('Usuário já existe', 1514553949);
+            throw new UserAlreadyRegisteredException(UserMessagesService::USER_REGISTERED, 1514553949);
         }
 
         if(!$this->generalHelper->validateEmail($credential->getEmail())){
-            throw new EmailIsNotValidException("Por favor, informe um endereço de email válido", 1514943370);
+            throw new EmailIsNotValidException(UserMessagesService::USER_EMAIL_INVALID, 1514943370);
         }
 
         if(empty($credential->getUsername() || empty($credential->getEmail()))){
-            throw new UsernameIsRequiredException('Nome de usuário e email são obrigatórios',1514553197);
+            throw new UsernameIsRequiredException(UserMessagesService::USERNAME_REQUIRED, 1514553197);
         }
     }
 
@@ -59,7 +59,7 @@ class CredentialService
      * @param Credential $credential
      * @return bool
      */
-    private function credentialIsRegistered(Credential $credential)
+    public function credentialIsRegistered(Credential $credential)
     {
         $credential = $this->credentialRepository->findCredentialByUsernameAndEmail($credential->getUsername(), $credential->getEmail());
 

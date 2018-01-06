@@ -9,6 +9,7 @@ namespace Trello\User\Domain\Model;
 use Neos\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Trello\User\Domain\Handler\UserHandler;
 
 /**
  * @Flow\Entity
@@ -35,6 +36,12 @@ class User
     protected $createdAt;
 
     /**
+     * @var UserHandler
+     * @Flow\Inject
+     */
+    protected $userHandler;
+
+    /**
      * @var \DateTime
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
@@ -53,10 +60,15 @@ class User
     }
 
 
-    public function create($name, Credential $credential)
+    /**
+     * @param User $newUser
+     * @return User
+     * @throws \Trello\User\Exception\EmailIsNotValidException
+     * @throws \Trello\User\Exception\UserAlreadyRegisteredException
+     */
+    public function update(User $newUser)
     {
-      $this->name = $name;
-      $this->credential = $credential;
+        return $this->userHandler->update($this, $newUser);
     }
 
     /**

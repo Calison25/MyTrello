@@ -13,11 +13,12 @@ use Trello\Helper\Service\ViewHelper;
 use Trello\User\Domain\Factory\AbstractUserFactory;
 use Trello\User\Domain\Factory\UserFactory;
 use Trello\User\Domain\Model\User;
+use Trello\User\Domain\Repository\CredentialRepository;
 use Trello\User\Domain\Repository\UserRepository;
 use Trello\User\Exception\Exception;
-use Trello\User\Exception\UserAlreadyExistException;
+use Trello\User\Exception\UserAlreadyRegisteredException;
 use Trello\User\Exception\UsernameIsRequiredException;
-use Trello\User\Service\UserMessages;
+use Trello\User\Service\UserMessagesService;
 use Trello\User\Service\UserService;
 
 class UserController extends ActionController
@@ -36,6 +37,12 @@ class UserController extends ActionController
      * @Flow\Inject
      */
     protected $userRepository;
+
+    /**
+     * @var CredentialRepository
+     * @Flow\Inject
+     */
+    protected $credentialRepository;
 
     /**
      * @var ViewHelper
@@ -65,12 +72,13 @@ class UserController extends ActionController
             $convertedData = $this->requestHelper->convertRequestToArray($data);
             $createdUser = $this->userFactory->create($convertedData);
             $this->userService->userIsValid($createdUser);
+            $this->credentialRepository->add($createdUser->getCredential());
             $this->userRepository->add($createdUser);
 
             $this->response->setStatus(200);
-            $message = UserMessages::CREATE_USER;
+            $message = UserMessagesService::CREATE_USER;
             $success = true;
-        }catch (UserAlreadyExistException $e){
+        }catch (UserAlreadyRegisteredException $e){
             $this->response->setStatus(400);
             $message = $e->getMessage();
             $success = false;
@@ -99,11 +107,13 @@ class UserController extends ActionController
 
         try{
             $convertedData = $this->requestHelper->convertRequestToArray($data);
-            $updatedUser = $this->abstractUserFactory->updateUser($user, $convertedData);
+            $newUser = $this->userFactory->create($convertedData);
+            $updatedUser = $user->update($newUser);
 
             $this->response->setStatus(200);
+            $this->credentialRepository->update($updatedUser->getCredential());
             $this->userRepository->update($updatedUser);
-            $message = UserMessages::UPDATED_USER;
+            $message = UserMessagesService::UPDATED_USER;
             $success = true;
         }catch (\Exception $e){
             $this->response->setStatus(400);

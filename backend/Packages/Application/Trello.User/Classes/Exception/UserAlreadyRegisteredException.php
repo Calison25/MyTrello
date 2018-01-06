@@ -9,7 +9,7 @@ namespace Trello\User\Exception;
  * Time: 10:10
  */
 
-class UserAlreadyExistException extends Exception
+class UserAlreadyRegisteredException extends Exception
 {
 
 }

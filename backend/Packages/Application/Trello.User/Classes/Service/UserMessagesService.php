@@ -11,10 +11,16 @@ namespace Trello\User\Service;
 
 
 
-class UserMessages
+class UserMessagesService
 {
 
     const CREATE_USER = 'Usuário criado com sucesso';
 
     const UPDATED_USER = 'Usuário foi atualizado com sucesso';
+
+    const USER_EMAIL_INVALID = 'Por favor, informe um endereço de email válido';
+
+    const USER_REGISTERED = 'Nome de usuário já existe';
+
+    const USERNAME_REQUIRED = 'Nome de usuário e email são obrigatórios';
 }

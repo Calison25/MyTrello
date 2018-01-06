@@ -25,7 +25,7 @@ class UserService
     /**
      * @param User $user
      * @throws \Trello\User\Exception\EmailIsNotValidException
-     * @throws \Trello\User\Exception\UserAlreadyExistException
+     * @throws \Trello\User\Exception\UserAlreadyRegisteredException
      * @throws \Trello\User\Exception\UsernameIsRequiredException
      */
     public function userIsValid(User $user)

@@ -4,7 +4,7 @@ namespace Trello\User\Domain\Factory;
 
 use Neos\Flow\Annotations as Flow;
 use Trello\User\Domain\Model\User;
-use Trello\User\Exception\UserAlreadyExistException;
+use Trello\User\Exception\UserAlreadyRegisteredException;
 use Trello\User\Exception\UsernameIsRequiredException;
 use Trello\User\Service\CredentialService;
 use Trello\User\Service\UserService;
