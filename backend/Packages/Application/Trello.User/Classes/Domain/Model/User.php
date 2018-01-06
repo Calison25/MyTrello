@@ -24,7 +24,7 @@ class User
 
     /**
      * @var Credential
-     * @ORM\OneToOne
+     * @ORM\OneToOne(cascade={"all"})
      */
     protected $credential;
 

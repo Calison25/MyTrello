@@ -23,4 +23,6 @@ class UserMessagesService
     const USER_REGISTERED = 'Nome de usuário já existe';
 
     const USERNAME_REQUIRED = 'Nome de usuário e email são obrigatórios';
+
+    const USER_DELETED = 'Usuário removido com sucesso';
 }

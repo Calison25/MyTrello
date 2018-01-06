@@ -71,7 +71,6 @@ class UserController extends ActionController
             $convertedData = $this->requestHelper->convertRequestToArray($data);
             $createdUser = $this->userFactory->create($convertedData);
             $this->userService->userIsValid($createdUser);
-            $this->credentialRepository->add($createdUser->getCredential());
             $this->userRepository->add($createdUser);
 
             $this->response->setStatus(200);
@@ -99,7 +98,6 @@ class UserController extends ActionController
             $updatedUser = $user->update($newUser);
 
             $this->response->setStatus(200);
-            $this->credentialRepository->update($updatedUser->getCredential());
             $this->userRepository->update($updatedUser);
             $message = UserMessagesService::UPDATED_USER;
             $success = true;
@@ -118,7 +116,11 @@ class UserController extends ActionController
     public function deleteAction(User $user)
     {
         try{
-
+//            $this->credentialRepository->remove($user->getCredential());
+            $this->userRepository->remove($user);
+            $this->response->setStatus(200);
+            $message = UserMessagesService::USER_DELETED;
+            $success = true;
         }catch (\Exception $e){
             $this->response->setStatus(400);
             $message = $e->getMessage();

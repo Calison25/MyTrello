@@ -15,3 +15,12 @@
     '@controller': 'User'
     '@action': 'update'
   httpMethods: ['POST']
+
+-
+  name: 'Delete User'
+  uriPattern: 'delete-user'
+  defaults:
+    '@package': 'Trello.User'
+    '@controller': 'User'
+    '@action': 'delete'
+  httpMethods: ['POST']
