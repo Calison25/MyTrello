@@ -16,7 +16,7 @@ use Trello\User\Service\UserService;
  * Time: 09:58
  */
 
-class UserFactory implements UserFactoryInterface
+class UserFactory
 {
 
     /**
@@ -32,12 +32,8 @@ class UserFactory implements UserFactoryInterface
     protected $credentialFactory;
 
     /**
-     * @param array $data
+     * @param $data
      * @return User
-     * @throws UserAlreadyExistException
-     * @throws UsernameIsRequiredException
-     * @throws \Neos\Flow\Persistence\Exception\IllegalObjectTypeException
-     * @throws \Trello\User\Exception\EmailIsNotValidException
      */
     public function create($data)
     {
@@ -45,33 +41,5 @@ class UserFactory implements UserFactoryInterface
         $newUser = new User($data['name'], $credential);
 
         return $newUser;
-    }
-
-    /**
-     * @param User $user
-     * @param array $data
-     * @return User
-     * @throws UserAlreadyExistException
-     * @throws UsernameIsRequiredException
-     * @throws \Neos\Flow\Persistence\Exception\IllegalObjectTypeException
-     * @throws \Trello\User\Exception\EmailIsNotValidException
-     */
-    public function update(User $user, $data)
-    {
-        $newUser = $this->create($data);
-
-        $user->setName($newUser->getName());
-        $user->setCredential($newUser->getCredential());
-
-        return $user;
-    }
-
-    /**
-     * @param string $username
-     * @return User|void
-     */
-    public function delete($username)
-    {
-        // TODO: Implement delete() method.
     }
 }

@@ -52,6 +52,13 @@ class User
         $this->setCredential($credential);
     }
 
+
+    public function create($name, Credential $credential)
+    {
+      $this->name = $name;
+      $this->credential = $credential;
+    }
+
     /**
      * @return string
      */

@@ -10,6 +10,7 @@ use Neos\Flow\Mvc\Controller\ActionController;
 use Neos\Flow\Mvc\View\JsonView;
 use Trello\Helper\Service\RequestHelper;
 use Trello\Helper\Service\ViewHelper;
+use Trello\User\Domain\Factory\AbstractUserFactory;
 use Trello\User\Domain\Factory\UserFactory;
 use Trello\User\Domain\Model\User;
 use Trello\User\Domain\Repository\UserRepository;
@@ -17,17 +18,12 @@ use Trello\User\Exception\Exception;
 use Trello\User\Exception\UserAlreadyExistException;
 use Trello\User\Exception\UsernameIsRequiredException;
 use Trello\User\Service\UserMessages;
+use Trello\User\Service\UserService;
 
 class UserController extends ActionController
 {
 
     protected $defaultViewObjectName = JsonView::class;
-
-    /**
-     * @var UserFactory
-     * @Flow\Inject
-     */
-    protected $userFactory;
 
     /**
      * @var RequestHelper
@@ -48,6 +44,18 @@ class UserController extends ActionController
     protected $viewHelper;
 
     /**
+     * @var UserService
+     * @Flow\Inject
+     */
+    protected $userService;
+
+    /**
+     * @var UserFactory
+     * @Flow\Inject
+     */
+    protected $userFactory;
+
+    /**
      * @param array $data
      */
     public function createAction(array $data)
@@ -56,6 +64,7 @@ class UserController extends ActionController
         try{
             $convertedData = $this->requestHelper->convertRequestToArray($data);
             $createdUser = $this->userFactory->create($convertedData);
+            $this->userService->userIsValid($createdUser);
             $this->userRepository->add($createdUser);
 
             $this->response->setStatus(200);
@@ -90,7 +99,7 @@ class UserController extends ActionController
 
         try{
             $convertedData = $this->requestHelper->convertRequestToArray($data);
-            $updatedUser = $this->userFactory->update($user, $convertedData);
+            $updatedUser = $this->abstractUserFactory->updateUser($user, $convertedData);
 
             $this->response->setStatus(200);
             $this->userRepository->update($updatedUser);

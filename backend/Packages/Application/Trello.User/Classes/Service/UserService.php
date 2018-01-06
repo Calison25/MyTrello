@@ -17,8 +17,19 @@ class UserService
 {
 
     /**
-     * @var UserRepository
+     * @var CredentialService
      * @Flow\Inject
      */
-    protected $userRepository;
+    protected $credentialService;
+
+    /**
+     * @param User $user
+     * @throws \Trello\User\Exception\EmailIsNotValidException
+     * @throws \Trello\User\Exception\UserAlreadyExistException
+     * @throws \Trello\User\Exception\UsernameIsRequiredException
+     */
+    public function userIsValid(User $user)
+    {
+        $this->credentialService->credentialIsValid($user->getCredential());
+    }
 }
