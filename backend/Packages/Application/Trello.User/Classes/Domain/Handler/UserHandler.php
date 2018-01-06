@@ -3,7 +3,7 @@
 namespace Trello\User\Domain\Handler;
 
 use Neos\Flow\Annotations as Flow;
-use Trello\Helper\Service\GeneralHelper;
+use Trello\Helper\Service\GeneralHelperService;
 use Trello\User\Domain\Model\Credential;
 use Trello\User\Domain\Model\User;
 use Trello\User\Exception\EmailIsNotValidException;
@@ -28,7 +28,7 @@ class UserHandler
     protected $credentialService;
 
     /**
-     * @var GeneralHelper
+     * @var GeneralHelperService
      * @Flow\Inject
      */
     protected $generalHelper;

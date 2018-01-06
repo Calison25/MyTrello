@@ -8,8 +8,9 @@ namespace Trello\User\Controller;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\Controller\ActionController;
 use Neos\Flow\Mvc\View\JsonView;
-use Trello\Helper\Service\RequestHelper;
-use Trello\Helper\Service\ViewHelper;
+use Trello\Helper\Domain\Factory\ViewFactory;
+use Trello\Helper\Service\RequestHelperService;
+use Trello\Helper\Service\ViewHelperService;
 use Trello\User\Domain\Factory\AbstractUserFactory;
 use Trello\User\Domain\Factory\UserFactory;
 use Trello\User\Domain\Model\User;
@@ -27,7 +28,7 @@ class UserController extends ActionController
     protected $defaultViewObjectName = JsonView::class;
 
     /**
-     * @var RequestHelper
+     * @var RequestHelperService
      * @Flow\Inject
      */
     protected $requestHelper;
@@ -45,10 +46,10 @@ class UserController extends ActionController
     protected $credentialRepository;
 
     /**
-     * @var ViewHelper
+     * @var ViewHelperService
      * @Flow\Inject
      */
-    protected $viewHelper;
+    protected $viewHelperService;
 
     /**
      * @var UserService
@@ -61,6 +62,12 @@ class UserController extends ActionController
      * @Flow\Inject
      */
     protected $userFactory;
+
+    /**
+     * @var ViewFactory
+     * @Flow\Inject
+     */
+    protected $viewFactory;
 
     /**
      * @param array $data
@@ -82,7 +89,8 @@ class UserController extends ActionController
             $success = false;
         }
 
-        $this->viewHelper->assignView($this->view, $message, $success);
+        $viewResponse = $this->viewFactory->create($this->view, $this->response, $message, $success);
+        $this->viewHelperService->assignView($viewResponse);
     }
 
 
@@ -107,7 +115,8 @@ class UserController extends ActionController
             $success = false;
         }
 
-        $this->viewHelper->assignView($this->view, $message, $success);
+        $viewResponse = $this->viewFactory->create($this->view, $this->response, $message, $success);
+        $this->viewHelperService->assignView($viewResponse);
     }
 
     /**
@@ -116,7 +125,6 @@ class UserController extends ActionController
     public function deleteAction(User $user)
     {
         try{
-//            $this->credentialRepository->remove($user->getCredential());
             $this->userRepository->remove($user);
             $this->response->setStatus(200);
             $message = UserMessagesService::USER_DELETED;
@@ -127,6 +135,7 @@ class UserController extends ActionController
             $success = false;
         }
 
-        $this->viewHelper->assignView($this->view, $message, $success);
+        $viewResponse = $this->viewFactory->create($this->view, $this->response, $message, $success);
+        $this->viewHelperService->assignView($viewResponse);
     }
 }

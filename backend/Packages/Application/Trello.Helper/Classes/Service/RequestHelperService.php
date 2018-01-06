@@ -9,7 +9,7 @@ namespace Trello\Helper\Service;
  * Time: 16:40
  */
 
-class RequestHelper
+class RequestHelperService
 {
 
     /**

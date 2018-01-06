@@ -11,7 +11,7 @@ namespace Trello\Helper\Service;
 
 use Trello\User\Exception\EmailIsNotValidException;
 
-class GeneralHelper
+class GeneralHelperService
 {
 
     /**
