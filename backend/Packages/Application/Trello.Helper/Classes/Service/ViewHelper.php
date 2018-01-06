@@ -1,6 +1,7 @@
 <?php
 
 namespace Trello\Helper\Service;
+use Neos\Flow\Mvc\View\ViewInterface;
 
 /**
  * Created by PhpStorm.
@@ -23,5 +24,17 @@ class ViewHelper
         ];
 
         return $result;
+    }
+
+    /**
+     * @param ViewInterface $view
+     * @param $message
+     * @param $success
+     */
+    public function assignView(ViewInterface $view, $message, $success)
+    {
+        $view->setVariablesToRender(['response']);
+        $response = $this->buildViewAssign($message, $success);
+        $view->assign('response', $response);
     }
 }

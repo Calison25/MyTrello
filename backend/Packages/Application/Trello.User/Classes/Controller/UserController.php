@@ -67,7 +67,6 @@ class UserController extends ActionController
      */
     public function createAction(array $data)
     {
-        $this->view->setVariablesToRender(['response']);
         try{
             $convertedData = $this->requestHelper->convertRequestToArray($data);
             $createdUser = $this->userFactory->create($convertedData);
@@ -84,8 +83,7 @@ class UserController extends ActionController
             $success = false;
         }
 
-        $response = $this->viewHelper->buildViewAssign($message, $success);
-        $this->view->assign('response', $response);
+        $this->viewHelper->assignView($this->view, $message, $success);
     }
 
 
@@ -95,8 +93,6 @@ class UserController extends ActionController
      */
     public function updateAction(User $user, $data)
     {
-        $this->view->setVariablesToRender(['response']);
-
         try{
             $convertedData = $this->requestHelper->convertRequestToArray($data);
             $newUser = $this->userFactory->create($convertedData);
@@ -113,9 +109,22 @@ class UserController extends ActionController
             $success = false;
         }
 
-        $response = $this->viewHelper->buildViewAssign($message, $success);
-        $this->view->assign('response', $response);
+        $this->viewHelper->assignView($this->view, $message, $success);
     }
 
+    /**
+     * @param User $user
+     */
+    public function deleteAction(User $user)
+    {
+        try{
 
+        }catch (\Exception $e){
+            $this->response->setStatus(400);
+            $message = $e->getMessage();
+            $success = false;
+        }
+
+        $this->viewHelper->assignView($this->view, $message, $success);
+    }
 }
