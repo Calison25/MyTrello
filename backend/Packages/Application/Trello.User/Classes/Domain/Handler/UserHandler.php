@@ -51,7 +51,8 @@ class UserHandler
             return $currentUser;
         }
 
-        if(!empty($newUser->getCredential()->getUsername())){
+        if(!empty($newUser->getCredential()->getUsername()) &&
+            $currentUser->getCredential()->getUsername() != $newUser->getCredential()->getUsername()){
             if($this->credentialService->credentialIsRegistered($newUser->getCredential())){
                 throw new UserAlreadyRegisteredException(UserMessagesService::USER_REGISTERED, 1515263449);
             }
@@ -59,7 +60,8 @@ class UserHandler
             $currentUser->getCredential()->setUsername($newUser->getCredential()->getUsername());
         }
 
-        if(!empty($newUser->getCredential()->getEmail())){
+        if(!empty($newUser->getCredential()->getEmail()) &&
+            $currentUser->getCredential()->getEmail() != $newUser->getCredential()->getEmail()){
             if(!$this->generalHelper->validateEmail($newUser->getCredential()->getEmail())){
                 throw new EmailIsNotValidException(UserMessagesService::USER_EMAIL_INVALID, 1515263989);
             }
@@ -68,7 +70,7 @@ class UserHandler
         }
 
         if(!empty($newUser->getCredential()->getPassword())){
-            $currentUser->getCredential()->setPassword($newUser->getCredential()->getPassword());
+            $currentUser->getCredential()->setPassword(md5($newUser->getCredential()->getPassword()));
         }
 
         return $currentUser;

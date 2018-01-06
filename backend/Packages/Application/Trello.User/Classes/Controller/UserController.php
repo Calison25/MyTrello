@@ -124,4 +124,6 @@ class UserController extends ActionController
         $response = $this->viewHelper->buildViewAssign($message, $success);
         $this->view->assign('response', $response);
     }
+
+
 }
