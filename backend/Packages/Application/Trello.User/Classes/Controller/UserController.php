@@ -78,14 +78,6 @@ class UserController extends ActionController
             $this->response->setStatus(200);
             $message = UserMessagesService::CREATE_USER;
             $success = true;
-        }catch (UserAlreadyRegisteredException $e){
-            $this->response->setStatus(400);
-            $message = $e->getMessage();
-            $success = false;
-        }catch (UsernameIsRequiredException $e){
-            $this->response->setStatus(400);
-            $message = $e->getMessage();
-            $success = false;
         }catch (\Exception $e){
             $this->response->setStatus(400);
             $message = $e->getMessage();
