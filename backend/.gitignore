@@ -1,7 +1,7 @@
 /Build/
-/Configuration/
 /Data/
-/Packages/
+/Packages/Framework/
+/Packages/Libraries/
 /Web/
 /bin/
 /Readme.rst
