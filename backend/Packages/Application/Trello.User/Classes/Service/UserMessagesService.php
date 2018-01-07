@@ -25,4 +25,6 @@ class UserMessagesService
     const USERNAME_REQUIRED = 'Nome de usuário e email são obrigatórios';
 
     const USER_DELETED = 'Usuário removido com sucesso';
+
+    const USER_NOTFOUND = 'Username não encontrado no sistema';
 }

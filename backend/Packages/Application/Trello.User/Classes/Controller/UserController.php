@@ -11,10 +11,8 @@ use Neos\Flow\Mvc\View\JsonView;
 use Trello\Helper\Domain\Factory\ViewFactory;
 use Trello\Helper\Service\RequestHelperService;
 use Trello\Helper\Service\ViewHelperService;
-use Trello\User\Domain\Factory\AbstractUserFactory;
 use Trello\User\Domain\Factory\UserFactory;
 use Trello\User\Domain\Model\User;
-use Trello\User\Domain\Repository\CredentialRepository;
 use Trello\User\Domain\Repository\UserRepository;
 use Trello\User\Exception\Exception;
 use Trello\User\Exception\UserAlreadyRegisteredException;
@@ -38,12 +36,6 @@ class UserController extends ActionController
      * @Flow\Inject
      */
     protected $userRepository;
-
-    /**
-     * @var CredentialRepository
-     * @Flow\Inject
-     */
-    protected $credentialRepository;
 
     /**
      * @var ViewHelperService
@@ -93,6 +85,33 @@ class UserController extends ActionController
         $this->viewHelperService->assignView($viewResponse);
     }
 
+    /**
+     * @param string $username
+     */
+    public function showAction($username)
+    {
+        $user = null;
+
+        try{
+            $user = $this->userService->getUserByUsername($username);
+            $message = '';
+            $success = true;
+        }catch (\Exception $e){
+            $this->response->setStatus(400);
+            $message = $e->getMessage();
+            $success = false;
+        }
+
+        $viewResponse = $this->viewFactory->create($this->view, $this->response, $message, $success);
+        $viewResponse->getView()->setConfiguration([
+            'user' => [
+                '_descendAll' => $this->getUserConfiguration()
+            ]
+        ]);
+
+        $this->viewHelperService->assignView($viewResponse, 'user', $user);
+    }
+
 
     /**
      * @param User $user
@@ -137,5 +156,31 @@ class UserController extends ActionController
 
         $viewResponse = $this->viewFactory->create($this->view, $this->response, $message, $success);
         $this->viewHelperService->assignView($viewResponse);
+    }
+
+
+    /**
+     * @return array
+     */
+    private function getUserConfiguration()
+    {
+        return [
+            '_exposeObjectIdentifier' => true,
+            '_exposedObjectIdentifierKey' => '__identity',
+            '_only' => [
+                'name',
+                'credential',
+            ],
+            '_descend' => [
+                'credential' => [
+                    '_exposeObjectIdentifier' => true,
+                    '_exposedObjectIdentifierKey' => '__identity',
+                    '_only' => [
+                        'username',
+                        'email'
+                    ],
+                ],
+            ]
+        ];
     }
 }

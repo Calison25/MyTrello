@@ -8,6 +8,15 @@
   httpMethods: ['POST']
 
 -
+  name: 'Show user'
+  uriPattern: 'show-user'
+  defaults:
+    '@package': 'Trello.User'
+    '@controller': 'User'
+    '@action': 'show'
+  httpMethods: ['POST']
+
+-
   name: 'Update User'
   uriPattern: 'update-user'
   defaults:

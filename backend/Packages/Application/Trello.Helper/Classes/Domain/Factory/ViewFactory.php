@@ -34,7 +34,7 @@ class ViewFactory
      */
     public function create(ViewInterface $view, Response $response, $message, $success)
     {
-        $viewResponse = new ViewResponse($view, $response, $success, $message);
+        $viewResponse = new ViewResponse($view, $response, $message, $success);
 
         return $viewResponse;
     }

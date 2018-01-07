@@ -5,7 +5,7 @@ namespace Trello\User\Service;
 use Neos\Flow\Annotations as Flow;
 use Trello\Helper\Service\GeneralHelperService;
 use Trello\User\Domain\Model\Credential;
-use Trello\User\Domain\Repository\CredentialRepository;
+use Trello\User\Domain\Repository\UserRepository;
 use Trello\User\Exception\EmailIsNotValidException;
 use Trello\User\Exception\UserAlreadyRegisteredException;
 use Trello\User\Exception\UsernameIsRequiredException;
@@ -21,10 +21,10 @@ class CredentialService
 {
 
     /**
-     * @var CredentialRepository
+     * @var UserRepository
      * @Flow\Inject
      */
-    protected $credentialRepository;
+    protected $userRepository;
 
     /**
      * @var GeneralHelperService
@@ -61,7 +61,7 @@ class CredentialService
      */
     public function credentialIsRegistered(Credential $credential)
     {
-        $credential = $this->credentialRepository->findCredentialByUsernameAndEmail($credential->getUsername(), $credential->getEmail());
+        $credential = $this->userRepository->findCredentialByUsernameAndEmail($credential->getUsername(), $credential->getEmail());
 
         if($credential instanceof Credential){
             return true;

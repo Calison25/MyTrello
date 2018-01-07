@@ -30,8 +30,10 @@ class ViewHelperService
 
     /**
      * @param ViewResponse $viewResponse
+     * @param string $responseName
+     * @param null $appendData
      */
-    public function assignView(ViewResponse $viewResponse)
+    public function assignView(ViewResponse $viewResponse, $responseName = 'response', $appendData = null)
     {
         $viewResponse->getResponse()->setStatus(400);
 
@@ -39,8 +41,13 @@ class ViewHelperService
             $viewResponse->getResponse()->setStatus(200);
         }
 
-        $viewResponse->getView()->setVariablesToRender(['response']);
+        $viewResponse->getView()->setVariablesToRender([$responseName]);
         $response = $this->buildViewAssign($viewResponse->getMessage(), $viewResponse->isSuccess());
-        $viewResponse->getView()->assign('response', $response);
+
+        if($appendData != null){
+            $response[$responseName] = $appendData;
+        }
+
+        $viewResponse->getView()->assign($responseName, $response);
     }
 }
