@@ -627,6 +627,27 @@ return array (
       array (
       ),
     ),
+    'webonyx/graphql-php' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'webonyx.graphqlphp',
+      'packagePath' => 'Libraries/webonyx/graphql-php/',
+      'composerName' => 'webonyx/graphql-php',
+      'autoloadConfiguration' => 
+      array (
+        'files' => 
+        array (
+          0 => 'src/deprecated.php',
+        ),
+        'psr-4' => 
+        array (
+          'GraphQL\\' => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'phpdocumentor/reflection-common' => 
     array (
       'state' => 'active',
@@ -789,23 +810,6 @@ return array (
       array (
       ),
     ),
-    'sebastian/resource-operations' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.resourceoperations',
-      'packagePath' => 'Libraries/sebastian/resource-operations/',
-      'composerName' => 'sebastian/resource-operations',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'neos/eel' => 
     array (
       'state' => 'active',
@@ -901,6 +905,23 @@ return array (
       array (
       ),
     ),
+    'wwwision/graphql' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Wwwision.GraphQL',
+      'packagePath' => 'Application/Wwwision.GraphQL/',
+      'composerName' => 'wwwision/graphql',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Wwwision\\GraphQL\\' => 'Classes',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'neos/behat' => 
     array (
       'state' => 'active',
@@ -946,6 +967,23 @@ return array (
         'psr-4' => 
         array (
           'Trello\\Helper\\' => 'Classes/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/resource-operations' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.resourceoperations',
+      'packagePath' => 'Libraries/sebastian/resource-operations/',
+      'composerName' => 'sebastian/resource-operations',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 

@@ -28,8 +28,8 @@ class ShowUser extends Component {
     };
 
     componentDidMount = () => {
-        getUserData().then(user => this.setState({user}))
-        getCredentialData().then(credential => this.setState({credential}))
+        getUserData().then(user => this.setState({user}));
+        getCredentialData().then(credential => this.setState({credential}));
     };
 
     render() {

@@ -18,7 +18,8 @@
     "require": {
         "neos/flow": "~4.2.0",
         "neos/welcome": "~4.2.0",
-        "gedmo/doctrine-extensions": "^2.4"
+        "gedmo/doctrine-extensions": "^2.4",
+        "wwwision/graphql": "^2.1"
     },
     "require-dev": {
         "neos/kickstarter": "~4.2.0",

@@ -51,6 +51,8 @@ final class Versions
   'symfony/polyfill-mbstring' => 'v1.6.0@2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296',
   'symfony/yaml' => 'v2.8.32@968ef42161e4bc04200119da473077f9e7015128',
   'typo3fluid/fluid' => '2.1.3@52ccc0a1d4f1039b95a289dc44b2f6885a463799',
+  'webonyx/graphql-php' => 'v0.9.14@ed6629130869893e6efb5757dab5812def357bce',
+  'wwwision/graphql' => 'v2.1.0@5dbbcfcf941691a0e21441cebafbf549dd9395f0',
   'zendframework/zend-code' => '3.1.0@2899c17f83a7207f2d7f53ec2f421204d3beea27',
   'zendframework/zend-eventmanager' => '3.2.0@9d72db10ceb6e42fb92350c0cb54460da61bd79c',
   'mikey179/vfsStream' => 'v1.6.5@d5fec95f541d4d71c4823bb5e30cf9b9e5b96145',
@@ -82,7 +84,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.1.0@cb2f008f3f05af2893a87208fe6a6c4985483f8b',
   'webmozart/assert' => '1.2.0@2db61e59ff05fe5126d152bd0655c9ea113e550f',
-  'neos/flow-base-distribution' => 'dev-master@c7b6fa8c3a62b48b3660a18128e0b284fe68d4ac',
+  'neos/flow-base-distribution' => 'dev-master@b8172a57f049984e836fe0bb040f1123a9a8f3d9',
 );
 
     private function __construct()

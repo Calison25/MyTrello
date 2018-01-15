@@ -10,6 +10,7 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'c594688b3441835d5575f3085da4a242' => __DIR__ . '/..' . '/webonyx/graphql-php/src/deprecated.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -24,6 +25,7 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         ),
         'W' => 
         array (
+            'Wwwision\\GraphQL\\' => 17,
             'Webmozart\\Assert\\' => 17,
         ),
         'T' => 
@@ -64,6 +66,10 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
             'Neos\\Cache\\' => 11,
             'Neos\\Behat\\' => 11,
         ),
+        'G' => 
+        array (
+            'GraphQL\\' => 8,
+        ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
@@ -90,6 +96,10 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         'Zend\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
+        ),
+        'Wwwision\\GraphQL\\' => 
+        array (
+            0 => __DIR__ . '/../../..' . '/Packages/Application/Wwwision.GraphQL/Classes',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -192,6 +202,10 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         'Neos\\Behat\\' => 
         array (
             0 => __DIR__ . '/../../..' . '/Packages/Application/Neos.Behat/Classes',
+        ),
+        'GraphQL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webonyx/graphql-php/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
