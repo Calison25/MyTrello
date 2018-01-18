@@ -19,6 +19,7 @@
         "neos/flow": "~4.2.0",
         "neos/welcome": "~4.2.0",
         "gedmo/doctrine-extensions": "^2.4",
+        "webonyx/graphql-php": "0.9.14",
         "wwwision/graphql": "^2.1"
     },
     "require-dev": {

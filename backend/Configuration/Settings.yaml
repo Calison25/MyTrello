@@ -11,8 +11,20 @@
 # example, Packages/Framework/Neos.Flow/Configuration/Settings.yaml)
 # or read the fine manuals.
 
+Wwwision:
+  GraphQL:
+    endpoints:
+      apiGrapqhl:
+        querySchema: Trello\User\Routes\Query
+
 Neos:
   Flow:
+    mvc:
+      routes:
+        Wwwision.GraphQL:
+          variables:
+            endpoint: apiGrapqhl
+
     persistence:
 
       # It is good practice to not specify user name and password of the database

@@ -776,40 +776,6 @@ return array (
       array (
       ),
     ),
-    'sebastian/recursion-context' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.recursioncontext',
-      'packagePath' => 'Libraries/sebastian/recursion-context/',
-      'composerName' => 'sebastian/recursion-context',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/exporter' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.exporter',
-      'packagePath' => 'Libraries/sebastian/exporter/',
-      'composerName' => 'sebastian/exporter',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'neos/eel' => 
     array (
       'state' => 'active',
@@ -888,6 +854,23 @@ return array (
         'pathAndFilename' => 'Classes/Package.php',
       ),
     ),
+    'neos/behat' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Neos.Behat',
+      'packagePath' => 'Application/Neos.Behat/',
+      'composerName' => 'neos/behat',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Neos\\Behat\\' => 'Classes',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'neos/welcome' => 
     array (
       'state' => 'active',
@@ -922,17 +905,17 @@ return array (
       array (
       ),
     ),
-    'neos/behat' => 
+    'trello/graphql' => 
     array (
       'state' => 'active',
-      'packageKey' => 'Neos.Behat',
-      'packagePath' => 'Application/Neos.Behat/',
-      'composerName' => 'neos/behat',
+      'packageKey' => 'trello.Graphql',
+      'packagePath' => 'Application/trello.Graphql/',
+      'composerName' => 'trello/graphql',
       'autoloadConfiguration' => 
       array (
         'psr-4' => 
         array (
-          'Neos\\Behat\\' => 'Classes',
+          'trello\\Graphql\\' => 'Classes/',
         ),
       ),
       'packageClassInformation' => 
@@ -967,6 +950,40 @@ return array (
         'psr-4' => 
         array (
           'Trello\\Helper\\' => 'Classes/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/recursion-context' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.recursioncontext',
+      'packagePath' => 'Libraries/sebastian/recursion-context/',
+      'composerName' => 'sebastian/recursion-context',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/exporter' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.exporter',
+      'packagePath' => 'Libraries/sebastian/exporter/',
+      'composerName' => 'sebastian/exporter',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 

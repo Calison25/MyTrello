@@ -158,7 +158,6 @@ class UserController extends ActionController
         $this->viewHelperService->assignView($viewResponse);
     }
 
-
     /**
      * @return array
      */

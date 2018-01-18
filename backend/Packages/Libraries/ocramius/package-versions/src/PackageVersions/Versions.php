@@ -84,7 +84,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.1.0@cb2f008f3f05af2893a87208fe6a6c4985483f8b',
   'webmozart/assert' => '1.2.0@2db61e59ff05fe5126d152bd0655c9ea113e550f',
-  'neos/flow-base-distribution' => 'dev-master@b8172a57f049984e836fe0bb040f1123a9a8f3d9',
+  'neos/flow-base-distribution' => 'dev-master@e89117424677a544036406a15ca5779cd573f629',
 );
 
     private function __construct()
