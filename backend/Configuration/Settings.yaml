@@ -14,8 +14,8 @@
 Wwwision:
   GraphQL:
     endpoints:
-      apiGrapqhl:
-        querySchema: Trello\User\Routes\Query
+      api-grapqhl:
+        querySchema: Trello\Graphql\Type\RootSchema
 
 Neos:
   Flow:
@@ -23,7 +23,7 @@ Neos:
       routes:
         Wwwision.GraphQL:
           variables:
-            endpoint: apiGrapqhl
+            endpoint: api-grapqhl
 
     persistence:
 

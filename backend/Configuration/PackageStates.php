@@ -854,17 +854,34 @@ return array (
         'pathAndFilename' => 'Classes/Package.php',
       ),
     ),
-    'neos/behat' => 
+    'wwwision/graphql' => 
     array (
       'state' => 'active',
-      'packageKey' => 'Neos.Behat',
-      'packagePath' => 'Application/Neos.Behat/',
-      'composerName' => 'neos/behat',
+      'packageKey' => 'Wwwision.GraphQL',
+      'packagePath' => 'Application/Wwwision.GraphQL/',
+      'composerName' => 'wwwision/graphql',
       'autoloadConfiguration' => 
       array (
         'psr-4' => 
         array (
-          'Neos\\Behat\\' => 'Classes',
+          'Wwwision\\GraphQL\\' => 'Classes',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'trello/graphql' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Trello.Graphql',
+      'packagePath' => 'Application/Trello.Graphql/',
+      'composerName' => 'trello/graphql',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Trello\\Graphql\\' => 'Classes/',
         ),
       ),
       'packageClassInformation' => 
@@ -888,34 +905,17 @@ return array (
       array (
       ),
     ),
-    'wwwision/graphql' => 
+    'neos/behat' => 
     array (
       'state' => 'active',
-      'packageKey' => 'Wwwision.GraphQL',
-      'packagePath' => 'Application/Wwwision.GraphQL/',
-      'composerName' => 'wwwision/graphql',
+      'packageKey' => 'Neos.Behat',
+      'packagePath' => 'Application/Neos.Behat/',
+      'composerName' => 'neos/behat',
       'autoloadConfiguration' => 
       array (
         'psr-4' => 
         array (
-          'Wwwision\\GraphQL\\' => 'Classes',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'trello/graphql' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'trello.Graphql',
-      'packagePath' => 'Application/trello.Graphql/',
-      'composerName' => 'trello/graphql',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'trello\\Graphql\\' => 'Classes/',
+          'Neos\\Behat\\' => 'Classes',
         ),
       ),
       'packageClassInformation' => 
