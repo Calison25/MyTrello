@@ -36,6 +36,16 @@ class UserRepository extends Repository
         return $result->execute()->getFirst();
     }
 
+    public function getNameByIdentifier()
+    {
+
+    }
+
+    public function getNameByUsername()
+    {
+
+    }
+
     /**
      * @param $username
      * @param $email

@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "trello/graphql",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Trello\\Graphql\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Trello.Graphql"
+        }
+    }
+}
