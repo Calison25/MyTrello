@@ -59,7 +59,7 @@ class SearchFactory
         }
 
         if(isset($arguments['username']) && !empty($arguments['username'])){
-            $this->username = true;
+            $this->username = $arguments['username'];
         }
 
         if(isset($arguments['email']) && !empty($arguments['email'])){

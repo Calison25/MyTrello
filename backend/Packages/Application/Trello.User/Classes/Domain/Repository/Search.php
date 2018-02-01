@@ -10,6 +10,7 @@ namespace Trello\User\Domain\Repository;
 
 
 use Trello\User\Domain\Factory\SearchFactory;
+use Trello\User\Service\UserGraphQlService;
 use Trello\User\Service\UserService;
 
 class Search implements \Trello\Graphql\Search
@@ -21,19 +22,19 @@ class Search implements \Trello\Graphql\Search
    protected $searchFactory;
 
     /**
-     * @var UserService
+     * @var UserGraphQlService
      * @Flow\Inject
      */
-   protected $userService;
+   protected $userGraphQlService;
 
 
     /**
      * @param string $httpRequest
      * @return SearchFactory
      */
-   public function initializeArguments($httpRequest)
+   private function initializeArguments($httpRequest)
    {
-      $arguments = $this->userService->getArgumentsFromHttpRequest($httpRequest);
+      $arguments = $this->userGraphQlService->getArgumentsFromHttpRequest($httpRequest);
 
       return $this->searchFactory->create($arguments);
 

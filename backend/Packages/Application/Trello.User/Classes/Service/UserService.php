@@ -78,31 +78,4 @@ class UserService
 
         throw new UsernameNotFoundException(UserMessagesService::USER_NOTFOUND, 1516335645);
     }
-
-    /**
-     * @param string $httpRequest
-     * @return array
-     */
-    public function getArgumentsFromHttpRequest($httpRequest)
-    {
-        $args = [];
-
-        if(strpos($httpRequest,"name") !== false){
-            $args['name'] = true;
-        }
-
-        if(strpos($httpRequest,"username") !== false){
-            $args['username'] = true;
-        }
-
-        if(strpos($httpRequest,"email") !== false){
-            $args['email'] = true;
-        }
-
-        if(strpos($httpRequest,"password") !== false){
-            $args['password'] = true;
-        }
-
-        return $args;
-    }
 }

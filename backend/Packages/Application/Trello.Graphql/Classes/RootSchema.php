@@ -8,11 +8,11 @@ use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
 use Neos\Flow\Persistence\Doctrine\PersistenceManager;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
-use Trello\Graphql\Resolvers\UserResolve;
 use Trello\Graphql\Type\UserType;
 use Trello\User\Domain\Model\Credential;
 use Trello\User\Domain\Model\User;
 use Trello\User\Domain\Repository\Search;
+use Trello\User\Service\UserGraphQlService;
 use Trello\User\Service\UserService;
 use Wwwision\GraphQL\AccessibleObject;
 use Wwwision\GraphQL\GraphQLContext;
@@ -36,22 +36,16 @@ class RootSchema extends ObjectType
     protected $persistenceManager;
 
     /**
-     * @var \Trello\Graphql\Resolvers\UserResolve
+     * @var UserGraphQlService
      * @Flow\Inject
      */
-    protected $userResolve;
-
-    /**
-     * @var UserService
-     * @Flow\Inject
-     */
-    protected $userService;
+    protected $userGraphQlService;
 
     /**
      * @var Search
      * @Flow\Inject
      */
-    protected $userGraphQlSearch;
+    protected $userSearch;
 
     /**
      * @param TypeResolver $typeResolver
@@ -72,14 +66,8 @@ class RootSchema extends ObjectType
                         ],
                     ],
                     'resolve' => function ($root, array $args, GraphQLContext $context) {
-                        $searchCriteria = $args['username'];
-                        if(isset($args['id']) && !empty($args['id'])){
-                            $searchCriteria = $args['id'];
-                        }
-
                         $httpRequest = $context->getHttpRequest()->getParsedBody()['query'];
-                        $httpRequestArgs = $this->userService->getArgsFromHttpRequest($httpRequest);
-                        $user = $this->userGraphQlSearch->consultBySearchArgs($httpRequestArgs, $searchCriteria);
+                        $user = $this->userSearch->getObjectByArguments($httpRequest);
                     },
                 ],
                 'board' => [

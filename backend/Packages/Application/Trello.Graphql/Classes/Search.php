@@ -15,12 +15,6 @@ interface Search
 {
     /**
      * @param string $httpRequest
-     * @return SearchFactory
-     */
-    public function initializeArguments($httpRequest);
-
-    /**
-     * @param string $httpRequest
      * @return object
      */
     public function getObjectByArguments($httpRequest);
