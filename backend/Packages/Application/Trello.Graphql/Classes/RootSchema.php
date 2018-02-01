@@ -12,7 +12,7 @@ use Trello\Graphql\Resolvers\UserResolve;
 use Trello\Graphql\Type\UserType;
 use Trello\User\Domain\Model\Credential;
 use Trello\User\Domain\Model\User;
-use Trello\User\Domain\Repository\GraphQlSearch;
+use Trello\User\Domain\Repository\Search;
 use Trello\User\Service\UserService;
 use Wwwision\GraphQL\AccessibleObject;
 use Wwwision\GraphQL\GraphQLContext;
@@ -48,7 +48,7 @@ class RootSchema extends ObjectType
     protected $userService;
 
     /**
-     * @var GraphQlSearch
+     * @var Search
      * @Flow\Inject
      */
     protected $userGraphQlSearch;

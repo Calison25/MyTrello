@@ -16,15 +16,21 @@ use Trello\User\Service\UserService;
  * Time: 09:58
  */
 
-class GraphQlSearchFactory
+class SearchFactory
 {
+
+    /**
+     * @var string
+     */
+    protected $user;
+
     /**
      * @var boolean
      */
     protected $name;
 
     /**
-     * @var boolean
+     * @var string
      */
     protected $username;
 
@@ -38,22 +44,32 @@ class GraphQlSearchFactory
      */
     protected $password;
 
-    public function setArguments($args)
+    /**
+     * @param $arguments
+     * @return $this
+     */
+    public function create($arguments)
     {
-        if(isset($args['name']) && !empty($args['name'])){
+        if(isset($arguments['user']) && !empty($arguments['user'])){
+            $this->user = $arguments['user'];
+        }
+
+        if(isset($arguments['name']) && !empty($arguments['name'])){
             $this->name = true;
         }
 
-        if(isset($args['username']) && !empty($args['username'])){
+        if(isset($arguments['username']) && !empty($arguments['username'])){
             $this->username = true;
         }
 
-        if(isset($args['email']) && !empty($args['email'])){
+        if(isset($arguments['email']) && !empty($arguments['email'])){
             $this->email = true;
         }
 
-        if(isset($args['password']) && !empty($args['password'])){
+        if(isset($arguments['password']) && !empty($arguments['password'])){
             $this->password = true;
         }
+
+        return $this;
     }
 }

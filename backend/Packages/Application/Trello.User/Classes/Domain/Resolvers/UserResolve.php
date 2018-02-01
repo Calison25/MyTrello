@@ -1,6 +1,6 @@
 <?php
 
-namespace Trello\Graphql\Resolvers;
+namespace Trello\User\Domain\Resolvers;
 
 use Neos\Flow\Persistence\PersistenceManagerInterface;
 use Trello\User\Domain\Model\User;

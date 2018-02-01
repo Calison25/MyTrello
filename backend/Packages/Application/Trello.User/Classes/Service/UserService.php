@@ -83,7 +83,7 @@ class UserService
      * @param string $httpRequest
      * @return array
      */
-    public function getArgsFromHttpRequest($httpRequest)
+    public function getArgumentsFromHttpRequest($httpRequest)
     {
         $args = [];
 
