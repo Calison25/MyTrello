@@ -42,10 +42,10 @@ class RootSchema extends ObjectType
     protected $userGraphQlService;
 
     /**
-     * @var Search
+     * @var InitSearch
      * @Flow\Inject
      */
-    protected $userSearch;
+    protected $initSearch;
 
     /**
      * @param TypeResolver $typeResolver
@@ -67,7 +67,9 @@ class RootSchema extends ObjectType
                     ],
                     'resolve' => function ($root, array $args, GraphQLContext $context) {
                         $httpRequest = $context->getHttpRequest()->getParsedBody()['query'];
-                        $user = $this->userSearch->getObjectByArguments($httpRequest);
+                        $search = $this->initSearch->getSearchByClass(User::class);
+                        $user = $search->getObjectByArguments($httpRequest);
+                        return $user;
                     },
                 ],
                 'board' => [
