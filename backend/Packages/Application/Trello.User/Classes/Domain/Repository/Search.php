@@ -9,6 +9,7 @@
 namespace Trello\User\Domain\Repository;
 
 
+use Neos\Flow\Annotations as Flow;
 use Trello\User\Domain\Factory\SearchFactory;
 use Trello\User\Service\UserGraphQlService;
 use Trello\User\Service\UserService;

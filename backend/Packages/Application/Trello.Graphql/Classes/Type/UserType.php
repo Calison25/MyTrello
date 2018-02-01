@@ -29,12 +29,6 @@ class UserType extends ObjectType
     private static $user;
 
     /**
-     * @var \Trello\Graphql\Resolvers\UserResolve
-     * @Flow\Inject
-     */
-    protected $userResolve;
-
-    /**
      * @var UserService
      * @Flow\Inject
      */

@@ -24,12 +24,6 @@ use Wwwision\GraphQL\TypeResolver;
 class CredentialType extends ObjectType
 {
     /**
-     * @var \Trello\Graphql\Resolvers\UserResolve
-     * @Flow\Inject
-     */
-    protected $userResolve;
-
-    /**
      * @param TypeResolver $typeResolver
      */
     public function __construct(TypeResolver $typeResolver)
