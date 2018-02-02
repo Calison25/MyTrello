@@ -30,8 +30,9 @@ class Search implements \Trello\Graphql\Search
 
 
     /**
-     * @param string $httpRequest
+     * @param $httpRequest
      * @return SearchFactory
+     * @throws \Trello\User\Exception\RequestArgumentException
      */
    private function initializeArguments($httpRequest)
    {
@@ -44,6 +45,7 @@ class Search implements \Trello\Graphql\Search
     /**
      * @param string $httpRequest
      * @return object|void
+     * @throws \Trello\User\Exception\RequestArgumentException
      */
    public function getObjectByArguments($httpRequest)
    {

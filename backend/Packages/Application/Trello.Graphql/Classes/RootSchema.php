@@ -66,10 +66,7 @@ class RootSchema extends ObjectType
                         ],
                     ],
                     'resolve' => function ($root, array $args, GraphQLContext $context) {
-                        $httpRequest = $context->getHttpRequest()->getParsedBody()['query'];
-                        $search = $this->initSearch->getSearchByClass(User::class);
-                        $user = $search->getObjectByArguments($httpRequest);
-                        return $user;
+                        return $this->getResolve($context);
                     },
                 ],
                 'board' => [
@@ -86,6 +83,19 @@ class RootSchema extends ObjectType
                 ],
             ],
         ]);
+    }
+
+    /**
+     * @param GraphQLContext $context
+     * @return object
+     * @throws \Exception
+     */
+    private function getResolve(GraphQLContext $context)
+    {
+        $httpRequest = $context->getHttpRequest()->getParsedBody()['query'];
+        $search = $this->initSearch->getSearchByClass(User::class);
+        $user = $search->getObjectByArguments($httpRequest);
+        return $user;
     }
 
 }
