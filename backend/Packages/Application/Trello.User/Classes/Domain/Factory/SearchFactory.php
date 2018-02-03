@@ -22,7 +22,12 @@ class SearchFactory
     /**
      * @var string
      */
-    protected $user;
+    protected $argId;
+
+    /**
+     * @var string
+     */
+    protected $argUsername;
 
     /**
      * @var boolean
@@ -30,7 +35,7 @@ class SearchFactory
     protected $name;
 
     /**
-     * @var string
+     * @var boolean
      */
     protected $username;
 
@@ -50,8 +55,12 @@ class SearchFactory
      */
     public function create($arguments)
     {
-        if(isset($arguments['user']) && !empty($arguments['user'])){
-            $this->user = $arguments['user'];
+        if(isset($arguments['arg_id']) && !empty($arguments['arg_id'])){
+            $this->argId = $arguments['arg_id'];
+        }
+
+        if(isset($arguments['arg_username']) && !empty($arguments['arg_username'])){
+            $this->argUsername = $arguments['arg_username'];
         }
 
         if(isset($arguments['name']) && !empty($arguments['name'])){
@@ -71,5 +80,53 @@ class SearchFactory
         }
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getArgId()
+    {
+        return $this->argId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getArgUsername()
+    {
+        return $this->argUsername;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPassword()
+    {
+        return $this->password;
     }
 }

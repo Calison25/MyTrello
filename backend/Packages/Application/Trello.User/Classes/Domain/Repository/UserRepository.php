@@ -2,8 +2,12 @@
 
 namespace Trello\User\Domain\Repository;
 
+use Doctrine\ORM\QueryBuilder;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Persistence\Repository;
+use Trello\Helper\Domain\Repository\AbstractRepository;
+use Trello\User\Domain\Factory\SearchFactory;
+use Trello\User\Domain\Model\User;
 
 /**
  * Created by PhpStorm.
@@ -15,53 +19,82 @@ use Neos\Flow\Persistence\Repository;
 /**
  * @Flow\Scope("singleton")
  */
-class UserRepository extends Repository
+class UserRepository extends AbstractRepository
 {
 
+    CONST ENTITY_CLASS = User::class;
 
     /**
-     * @param $username
-     * @return object
+     * @param QueryBuilder $queryBuilder
+     * @param SearchFactory $searchFactory
+     * @return mixed|void
      */
-    public function findUserByUsername($username)
+    protected function buildSelect(QueryBuilder $queryBuilder, SearchFactory $searchFactory)
     {
-        $query = $this->createQuery();
-
-        $result = $query->matching(
-            $query->logicalAnd([
-                $query->equals('credential.username', $username)
-            ])
-        );
-
-        return $result->execute()->getFirst();
-    }
-
-    public function getNameByIdentifier()
-    {
-
-    }
-
-    public function getNameByUsername()
-    {
-
+        // TODO: Implement buildSelect() method.
     }
 
     /**
-     * @param $username
-     * @param $email
-     * @return object
+     * @param QueryBuilder $queryBuilder
      */
-    public function findCredentialByUsernameAndEmail($username, $email)
+    protected function buildFrom(QueryBuilder $queryBuilder)
     {
-        $query = $this->createQuery();
-
-        $result = $query->matching(
-            $query->logicalOr([
-                $query->equals('credential.username', $username),
-                $query->equals('credential.email', $email)
-            ])
-        );
-
-        return $result->execute()->getFirst();
+        // TODO: Implement buildFrom() method.
     }
+
+    /**
+     * @param QueryBuilder $queryBuilder
+     * @param SearchFactory $searchFactory
+     */
+    protected function buildJoin(QueryBuilder $queryBuilder, SearchFactory $searchFactory)
+    {
+        // TODO: Implement buildJoin() method.
+    }
+
+    /**
+     * @param QueryBuilder $queryBuilder
+     * @param SearchFactory $searchFactory
+     */
+    protected function buildWhere(QueryBuilder $queryBuilder, SearchFactory $searchFactory)
+    {
+        // TODO: Implement buildWhere() method.
+    }
+
+
+//    /**
+//     * @param $username
+//     * @return object
+//     */
+//    public function findUserByUsername($username)
+//    {
+//        $query = $this->createQuery();
+//
+//        $result = $query->matching(
+//            $query->logicalAnd([
+//                $query->equals('credential.username', $username)
+//            ])
+//        );
+//
+//        return $result->execute()->getFirst();
+//    }
+//
+//
+//    /**
+//     * @param $username
+//     * @param $email
+//     * @return object
+//     */
+//    public function findCredentialByUsernameAndEmail($username, $email)
+//    {
+//        $query = $this->createQuery();
+//
+//        $result = $query->matching(
+//            $query->logicalOr([
+//                $query->equals('credential.username', $username),
+//                $query->equals('credential.email', $email)
+//            ])
+//        );
+//
+//        return $result->execute()->getFirst();
+//    }
 }
