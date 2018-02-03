@@ -22,11 +22,6 @@ class SearchFactory
     /**
      * @var string
      */
-    protected $argId;
-
-    /**
-     * @var string
-     */
     protected $argUsername;
 
     /**
@@ -55,10 +50,6 @@ class SearchFactory
      */
     public function create($arguments)
     {
-        if(isset($arguments['arg_id']) && !empty($arguments['arg_id'])){
-            $this->argId = $arguments['arg_id'];
-        }
-
         if(isset($arguments['arg_username']) && !empty($arguments['arg_username'])){
             $this->argUsername = $arguments['arg_username'];
         }
@@ -82,13 +73,6 @@ class SearchFactory
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getArgId()
-    {
-        return $this->argId;
-    }
 
     /**
      * @return string

@@ -49,6 +49,7 @@ abstract class AbstractRepository extends \Neos\Flow\Persistence\Doctrine\Reposi
 
     /**
      * @param SearchFactory $searchFactory
+     * @return array
      */
     public function search(SearchFactory $searchFactory)
     {
@@ -58,5 +59,7 @@ abstract class AbstractRepository extends \Neos\Flow\Persistence\Doctrine\Reposi
         $this->buildFrom($queryBuild);
         $this->buildJoin($queryBuild, $searchFactory);
         $this->buildWhere($queryBuild, $searchFactory);
+
+        return $queryBuild->getQuery()->getResult();
     }
 }

@@ -31,7 +31,7 @@ class UserRepository extends AbstractRepository
      */
     protected function buildSelect(QueryBuilder $queryBuilder, SearchFactory $searchFactory)
     {
-        // TODO: Implement buildSelect() method.
+        $queryBuilder->select($this->getSelectString($searchFactory));
     }
 
     /**
@@ -39,7 +39,7 @@ class UserRepository extends AbstractRepository
      */
     protected function buildFrom(QueryBuilder $queryBuilder)
     {
-        // TODO: Implement buildFrom() method.
+        $queryBuilder->from(self::ENTITY_CLASS, 'user');
     }
 
     /**
@@ -48,7 +48,9 @@ class UserRepository extends AbstractRepository
      */
     protected function buildJoin(QueryBuilder $queryBuilder, SearchFactory $searchFactory)
     {
-        // TODO: Implement buildJoin() method.
+        if($searchFactory->isUsername() || $searchFactory->isEmail() || $searchFactory->isPassword()){
+            $queryBuilder->join('user.credential','credential');
+        }
     }
 
     /**
@@ -57,44 +59,39 @@ class UserRepository extends AbstractRepository
      */
     protected function buildWhere(QueryBuilder $queryBuilder, SearchFactory $searchFactory)
     {
-        // TODO: Implement buildWhere() method.
+        if(!empty($searchFactory->getArgUsername())){
+          $queryBuilder->where('credential.username = :username')
+              ->setParameter('username', $searchFactory->getArgUsername());
+        }
     }
 
 
-//    /**
-//     * @param $username
-//     * @return object
-//     */
-//    public function findUserByUsername($username)
-//    {
-//        $query = $this->createQuery();
-//
-//        $result = $query->matching(
-//            $query->logicalAnd([
-//                $query->equals('credential.username', $username)
-//            ])
-//        );
-//
-//        return $result->execute()->getFirst();
-//    }
-//
-//
-//    /**
-//     * @param $username
-//     * @param $email
-//     * @return object
-//     */
-//    public function findCredentialByUsernameAndEmail($username, $email)
-//    {
-//        $query = $this->createQuery();
-//
-//        $result = $query->matching(
-//            $query->logicalOr([
-//                $query->equals('credential.username', $username),
-//                $query->equals('credential.email', $email)
-//            ])
-//        );
-//
-//        return $result->execute()->getFirst();
-//    }
+    /**
+     * @param SearchFactory $searchFactory
+     * @return string
+     */
+    private function getSelectString(SearchFactory $searchFactory)
+    {
+        $select = '';
+
+        if($searchFactory->isName()){
+            $select .= 'user.name,';
+        }
+
+        if($searchFactory->isUsername()){
+            $select .= 'credential.username,';
+        }
+
+        if($searchFactory->isEmail()){
+            $select .= 'credential.email,';
+        }
+
+        if($searchFactory->isPassword()){
+            $select .= 'credential.password,';
+        }
+
+        $select = trim($select, ",");
+
+        return $select;
+    }
 }

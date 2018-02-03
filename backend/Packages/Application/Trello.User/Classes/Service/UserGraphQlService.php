@@ -58,32 +58,16 @@ class UserGraphQlService
      */
     private function getRequestParameter($httpRequest)
     {
-        $args = [];
-        preg_match_all('/user(.*)(\{)/', $httpRequest, $matches);
-        $regexResult = $matches[1][0];
-
-       if (strpos($regexResult, "id") !== false){
-           $args['arg_id'] = $this->getRequestParameterFromId($regexResult);
-           return $args;
-       }
+       $args = [];
+       preg_match_all('/user(.*)(\{)/', $httpRequest, $matches);
+       $regexResult = $matches[1][0];
 
        if(strpos($regexResult, "username") !== false){
             $args['arg_username'] = $this->getRequestParameterFromUsername($regexResult);
             return $args;
        }
 
-       throw new RequestArgumentException("É obrigatório o argumento id ou username", 1517537620);
-    }
-
-    /**
-     * @param $regexResult
-     * @return string
-     */
-    private function getRequestParameterFromId($regexResult)
-    {
-        preg_match_all('/id:"(.*)(?=\))/', $regexResult, $matches);
-        $parameter = trim(str_replace("\"","", $matches[1][0]));
-        return $parameter;
+       throw new RequestArgumentException("É obrigatório o argumento username", 1517537620);
     }
 
     /**
