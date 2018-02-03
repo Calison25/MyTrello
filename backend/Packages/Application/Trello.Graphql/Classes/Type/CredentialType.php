@@ -34,20 +34,20 @@ class CredentialType extends ObjectType
             'fields' => [
                 'username' => [
                     'type' => Type::string(),
-                    'resolve' => function(){
-                        return UserType::user()->getCredential()->getUsername();
+                    'resolve' => function($root){
+                        return $root[0]['username'];
                     }
                 ],
                 'email' => [
                     'type' => Type::string(),
-                    'resolve' => function(){
-                        return UserType::user()->getCredential()->getEmail();
+                    'resolve' => function($root){
+                        return $root[0]['email'];
                     }
                 ],
                 'password' => [
                     'type' => Type::string(),
-                    'resolve' => function(){
-                        return UserType::user()->getCredential()->getPassword();
+                    'resolve' => function($root){
+                        return $root[0]['password'];
                     }
                 ],
             ],

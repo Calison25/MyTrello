@@ -15,7 +15,7 @@ interface Search
 {
     /**
      * @param string $httpRequest
-     * @return object
+     * @return array
      */
     public function getObjectByArguments($httpRequest);
 }

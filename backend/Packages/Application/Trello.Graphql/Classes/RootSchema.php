@@ -87,8 +87,9 @@ class RootSchema extends ObjectType
 
     /**
      * @param GraphQLContext $context
-     * @return object
+     * @return array
      * @throws \Exception
+     * @throws \Trello\User\Exception\RequestArgumentException
      */
     private function getResolve(GraphQLContext $context)
     {

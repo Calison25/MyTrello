@@ -50,13 +50,13 @@ class Search implements \Trello\Graphql\Search
 
     /**
      * @param string $httpRequest
-     * @return object|void
+     * @return array
      * @throws \Trello\User\Exception\RequestArgumentException
      */
    public function getObjectByArguments($httpRequest)
    {
         $searchFactory = $this->initializeArguments($httpRequest);
-        $this->userRepository->search($searchFactory);
+        return $this->userRepository->search($searchFactory);
    }
 
 }

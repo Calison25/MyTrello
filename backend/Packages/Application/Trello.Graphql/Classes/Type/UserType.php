@@ -45,14 +45,14 @@ class UserType extends ObjectType
             'fields' => [
                 'name' => [
                     'type' => Type::string(),
-                    'resolve' => function($root, array $args){
-                        return self::$user->getName();
+                    'resolve' => function($root){
+                        return $root[0]['name'];
                     }
                 ],
                 'credential' => [
                     'type' => $typeResolver->get(CredentialType::class),
-                    'resolve' => function ($root, array $args) {
-                        return [];
+                    'resolve' => function ($root) {
+                        return $root;
                     },
                 ]
             ],
