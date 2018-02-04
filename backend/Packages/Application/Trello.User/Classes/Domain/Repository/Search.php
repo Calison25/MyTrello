@@ -58,5 +58,4 @@ class Search implements \Trello\Graphql\Search
         $searchFactory = $this->initializeArguments($httpRequest);
         return $this->userRepository->search($searchFactory);
    }
-
 }
