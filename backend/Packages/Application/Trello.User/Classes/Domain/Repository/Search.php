@@ -29,10 +29,10 @@ class Search implements \Trello\Graphql\Search
    protected $userGraphQlService;
 
     /**
-     * @var UserRepository
+     * @var UserSearchRepository
      * @Flow\Inject
      */
-   protected $userRepository;
+   protected $userSearchRepository;
 
 
     /**
@@ -56,6 +56,6 @@ class Search implements \Trello\Graphql\Search
    public function getObjectByArguments($httpRequest)
    {
         $searchFactory = $this->initializeArguments($httpRequest);
-        return $this->userRepository->search($searchFactory);
+        return $this->userSearchRepository->search($searchFactory);
    }
 }

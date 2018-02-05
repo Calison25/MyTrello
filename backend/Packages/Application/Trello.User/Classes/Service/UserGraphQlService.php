@@ -6,7 +6,7 @@ use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
 use Trello\Helper\Service\GeneralHelperService;
 use Trello\User\Domain\Model\User;
-use Trello\User\Domain\Repository\UserRepository;
+use Trello\User\Domain\Repository\UserSearchRepository;
 use Trello\User\Exception\RequestArgumentException;
 use Trello\User\Exception\UsernameNotFoundException;
 

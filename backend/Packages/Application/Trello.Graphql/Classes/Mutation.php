@@ -9,6 +9,7 @@ use GraphQL\Type\Definition\Type;
 use Neos\Flow\Persistence\Doctrine\PersistenceManager;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
 use Trello\Graphql\Type\UserType;
+use Trello\User\Controller\UserController;
 use Trello\User\Domain\Model\Credential;
 use Trello\User\Domain\Model\User;
 use Wwwision\GraphQL\AccessibleObject;
@@ -32,30 +33,47 @@ class Mutation extends ObjectType
     protected $persistenceManager;
 
     /**
+     * @var UserController
+     * @Flow\Inject
+     */
+    protected $userController;
+
+    /**
      * @param TypeResolver $typeResolver
      */
     public function __construct(TypeResolver $typeResolver)
     {
         return parent::__construct([
             'name' => 'Mutation',
+            'description' => 'Mutations for trello',
             'fields' => [
-                'user' => [
-                    'type' => $typeResolver->get(UserType::class),
+                'createUser' => [
+                    'type' => Type::string(),
+                    'description' => 'Create an User',
+                    'args' => [
+                        'name' => ['type' => Type::nonNull(Type::string())],
+                        'username' => ['type' => Type::nonNull(Type::string())],
+                        'email' => ['type' => Type::nonNull(Type::string())],
+                        'password' => ['type' => Type::nonNull(Type::string())]
+                    ],
                     'resolve' => function ($root, array $args) {
-                            return [];
+                        $this->userController->createAction($args);
+                        return 'usuário criado com sucesso!';
                     },
                 ],
-                'board' => [
+                'updateUser' => [
                     'type' => Type::string(),
-                    'resolve' => function (){
-                            return 'board';
-                    }
+                    'description' => 'Create an User',
+                    'resolve' => function ($_, $args) {
+                        return 'ta chegando aqui!';
+                    },
                 ],
-                'team'  => [
+                'deleteUser' => [
                     'type' => Type::string(),
-                    'resolve' => function (){
-                        return 'team';
-                    }
+                    'description' => 'Create an User',
+                    'resolve' => function ($_, $args) {
+                        return 'ta chegando aqui!';
+                    },
                 ],
             ],
         ]);

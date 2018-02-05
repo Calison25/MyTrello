@@ -4,7 +4,7 @@ namespace Trello\User\Domain\Resolvers;
 
 use Neos\Flow\Persistence\PersistenceManagerInterface;
 use Trello\User\Domain\Model\User;
-use Trello\User\Domain\Repository\UserRepository;
+use Trello\User\Domain\Repository\UserSearchRepository;
 use Neos\Flow\Annotations as Flow;
 use Trello\User\Exception\UsernameNotFoundException;
 
@@ -26,7 +26,7 @@ class UserResolve
     protected $persistenceManager;
 
     /**
-     * @var UserRepository
+     * @var UserSearchRepository
      * @Flow\Inject
      */
     protected $userRepository;

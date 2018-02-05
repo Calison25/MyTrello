@@ -19,79 +19,41 @@ use Trello\User\Domain\Model\User;
 /**
  * @Flow\Scope("singleton")
  */
-class UserRepository extends AbstractRepository
+class UserRepository extends Repository
 {
-
-    CONST ENTITY_CLASS = User::class;
-
     /**
-     * @param QueryBuilder $queryBuilder
-     * @param SearchFactory $searchFactory
-     * @return mixed|void
+     * @param $username
+     * @return object
      */
-    protected function buildSelect(QueryBuilder $queryBuilder, SearchFactory $searchFactory)
+    public function findUserByUsername($username)
     {
-        $queryBuilder->select($this->getSelectString($searchFactory));
+        $query = $this->createQuery();
+
+        $result = $query->matching(
+            $query->logicalAnd([
+                $query->equals('credential.username', $username)
+            ])
+        );
+
+        return $result->execute()->getFirst();
     }
 
     /**
-     * @param QueryBuilder $queryBuilder
+     * @param $username
+     * @param $email
+     * @return object
      */
-    protected function buildFrom(QueryBuilder $queryBuilder)
+    public function findCredentialByUsernameAndEmail($username, $email)
     {
-        $queryBuilder->from(self::ENTITY_CLASS, 'user');
-    }
+        $query = $this->createQuery();
 
-    /**
-     * @param QueryBuilder $queryBuilder
-     * @param SearchFactory $searchFactory
-     */
-    protected function buildJoin(QueryBuilder $queryBuilder, SearchFactory $searchFactory)
-    {
-        if($searchFactory->isUsername() || $searchFactory->isEmail() || $searchFactory->isPassword()){
-            $queryBuilder->join('user.credential','credential');
-        }
-    }
+        $result = $query->matching(
+            $query->logicalOr([
+                $query->equals('credential.username', $username),
+                $query->equals('credential.email', $email)
+            ])
+        );
 
-    /**
-     * @param QueryBuilder $queryBuilder
-     * @param SearchFactory $searchFactory
-     */
-    protected function buildWhere(QueryBuilder $queryBuilder, SearchFactory $searchFactory)
-    {
-        if(!empty($searchFactory->getArgUsername())){
-          $queryBuilder->where('credential.username = :username')
-              ->setParameter('username', $searchFactory->getArgUsername());
-        }
-    }
-
-
-    /**
-     * @param SearchFactory $searchFactory
-     * @return string
-     */
-    private function getSelectString(SearchFactory $searchFactory)
-    {
-        $select = '';
-
-        if($searchFactory->isName()){
-            $select .= 'user.name,';
-        }
-
-        if($searchFactory->isUsername()){
-            $select .= 'credential.username,';
-        }
-
-        if($searchFactory->isEmail()){
-            $select .= 'credential.email,';
-        }
-
-        if($searchFactory->isPassword()){
-            $select .= 'credential.password,';
-        }
-
-        $select = trim($select, ",");
-
-        return $select;
+        return $result->execute()->getFirst();
     }
 }

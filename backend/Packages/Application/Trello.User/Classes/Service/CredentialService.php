@@ -6,6 +6,7 @@ use Neos\Flow\Annotations as Flow;
 use Trello\Helper\Service\GeneralHelperService;
 use Trello\User\Domain\Model\Credential;
 use Trello\User\Domain\Repository\UserRepository;
+use Trello\User\Domain\Repository\UserSearchRepository;
 use Trello\User\Exception\EmailIsNotValidException;
 use Trello\User\Exception\UserAlreadyRegisteredException;
 use Trello\User\Exception\UsernameIsRequiredException;
@@ -44,7 +45,6 @@ class CredentialService
         if($this->credentialIsRegistered($credential)){
             throw new UserAlreadyRegisteredException(UserMessagesService::USER_REGISTERED, 1514553949);
         }
-
         if(!$this->generalHelper->validateEmail($credential->getEmail())){
             throw new EmailIsNotValidException(UserMessagesService::USER_EMAIL_INVALID, 1514943370);
         }
