@@ -25,7 +25,6 @@ use Wwwision\GraphQL\TypeResolver;
 class Mutation extends ObjectType
 {
 
-
     /**
      * @var PersistenceManagerInterface
      * @Flow\Inject
@@ -57,15 +56,25 @@ class Mutation extends ObjectType
                         'password' => ['type' => Type::nonNull(Type::string())]
                     ],
                     'resolve' => function ($root, array $args) {
-                        $this->userController->createAction($args);
-                        return 'usuário criado com sucesso!';
+                        $result = $this->userController->createAction($args);
+                        return $result;
                     },
                 ],
                 'updateUser' => [
                     'type' => Type::string(),
-                    'description' => 'Create an User',
-                    'resolve' => function ($_, $args) {
-                        return 'ta chegando aqui!';
+                    'description' => 'Update an User',
+                    'args' => [
+                        'name' => ['type' => Type::string()],
+                        'username' => ['type' => Type::nonNull(Type::string())],
+                        'newUsername' => ['type' => Type::string()],
+                        'email' => ['type' => Type::string()],
+                        'password' => ['type' => Type::string()]
+                    ],
+                    'resolve' => function ($root_, array $args) {
+                        echo 'chega aqui!!';
+                        die;
+//                        $result = $this->userController->updateAction($args);
+//                        return $result;
                     },
                 ],
                 'deleteUser' => [

@@ -9,6 +9,7 @@ use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\Controller\ActionController;
 use Neos\Flow\Mvc\View\JsonView;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
+use Trello\Helper\Domain\Factory\JsonViewFactory;
 use Trello\Helper\Domain\Factory\ViewFactory;
 use Trello\Helper\Service\RequestHelperService;
 use Trello\Helper\Service\ViewHelperService;
@@ -34,12 +35,6 @@ class UserController extends ActionController
     protected $userRepository;
 
     /**
-     * @var ViewHelperService
-     * @Flow\Inject
-     */
-    protected $viewHelperService;
-
-    /**
      * @var UserService
      * @Flow\Inject
      */
@@ -52,10 +47,10 @@ class UserController extends ActionController
     protected $userFactory;
 
     /**
-     * @var ViewFactory
+     * @var JsonViewFactory
      * @Flow\Inject
      */
-    protected $viewFactory;
+    protected $jsonViewFactory;
 
     /**
      * @var PersistenceManagerInterface
@@ -65,6 +60,7 @@ class UserController extends ActionController
 
     /**
      * @param array $data
+     * @return string
      */
     public function createAction(array $data)
     {
@@ -80,7 +76,7 @@ class UserController extends ActionController
             $success = false;
         }
 
-//        $viewResponse = $this->viewFactory->create($this->view, $this->response, $message, $success);
+        return $this->jsonViewFactory->create($message, $success);
     }
 
 
@@ -104,8 +100,6 @@ class UserController extends ActionController
             $success = false;
         }
 
-        $viewResponse = $this->viewFactory->create($this->view, $this->response, $message, $success);
-        $this->viewHelperService->assignView($viewResponse);
     }
 
     /**
@@ -123,8 +117,6 @@ class UserController extends ActionController
             $message = $e->getMessage();
             $success = false;
         }
-
-        $viewResponse = $this->viewFactory->create($this->view, $this->response, $message, $success);
-        $this->viewHelperService->assignView($viewResponse);
+        
     }
 }

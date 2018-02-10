@@ -43,7 +43,7 @@ class UserRepository extends Repository
      * @param $email
      * @return object
      */
-    public function findCredentialByUsernameAndEmail($username, $email)
+    public function findUserByUsernameAndEmail($username, $email)
     {
         $query = $this->createQuery();
 
