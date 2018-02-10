@@ -51,15 +51,15 @@ class UserHandler
     /**
      * @param User $currentUser
      * @param User $newUser
-     * @return User
      * @throws EmailIsNotValidException
      * @throws UserAlreadyRegisteredException
      */
     private function updateCredentials(User $currentUser, User $newUser)
     {
         if(!$currentUser->getCredential() instanceof Credential){
-            return $currentUser;
+            return;
         }
+
         if(!empty($newUser->getCredential()->getUsername()) &&
             $currentUser->getCredential()->getUsername() != $newUser->getCredential()->getUsername())
         {

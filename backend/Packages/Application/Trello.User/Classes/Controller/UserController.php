@@ -101,20 +101,21 @@ class UserController extends ActionController
     }
 
     /**
-     * @param User $user
+     * @param array $data
+     * @return string
      */
-    public function deleteAction(User $user)
+    public function deleteAction(array $data)
     {
         try{
+            $user = $this->userService->getUserByUsername($data['username']);
             $this->userRepository->remove($user);
-            $this->response->setStatus(200);
             $message = UserMessagesService::USER_DELETED;
             $success = true;
         }catch (\Exception $e){
-            $this->response->setStatus(400);
             $message = $e->getMessage();
             $success = false;
         }
 
+        return $this->jsonViewFactory->create($message, $success);
     }
 }

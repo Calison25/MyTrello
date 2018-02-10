@@ -77,9 +77,13 @@ class Mutation extends ObjectType
                 ],
                 'deleteUser' => [
                     'type' => Type::string(),
-                    'description' => 'Create an User',
-                    'resolve' => function ($_, $args) {
-                        return 'ta chegando aqui!';
+                    'description' => 'Delete an User',
+                    'args' => [
+                        'username' => ['type' => Type::nonNull(Type::string())]
+                    ],
+                    'resolve' => function ($root_, $args) {
+                        $result = $this->userController->deleteAction($args);
+                        return $result;
                     },
                 ],
             ],

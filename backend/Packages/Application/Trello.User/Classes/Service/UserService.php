@@ -96,7 +96,7 @@ class UserService
      */
     public function updateUser(array $data)
     {
-        $currentUser = $this->userRepository->findUserByUsername($data['username']);
+        $currentUser = $this->getUserByUsername($data['username']);
 
         if($currentUser instanceof User){
             $data['username'] = $data['newUsername'] ?? $data['username'];
