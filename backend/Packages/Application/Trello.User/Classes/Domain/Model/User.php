@@ -62,13 +62,12 @@ class User
 
     /**
      * @param User $newUser
-     * @return User
      * @throws \Trello\User\Exception\EmailIsNotValidException
      * @throws \Trello\User\Exception\UserAlreadyRegisteredException
      */
     public function update(User $newUser)
     {
-        return $this->userHandler->update($this, $newUser);
+        $this->userHandler->update($this, $newUser);
     }
 
     /**

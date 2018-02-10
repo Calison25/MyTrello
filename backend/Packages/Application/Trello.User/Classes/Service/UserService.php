@@ -4,6 +4,7 @@ namespace Trello\User\Service;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
+use Trello\User\Domain\Factory\UserFactory;
 use Trello\User\Domain\Model\User;
 use Trello\User\Domain\Repository\UserRepository;
 use Trello\User\Domain\Repository\UserSearchRepository;
@@ -30,6 +31,12 @@ class UserService
      * @Flow\Inject
      */
     protected $userRepository;
+
+    /**
+     * @var UserFactory
+     * @Flow\Inject
+     */
+    protected $userFactory;
 
     /**
      * @var PersistenceManagerInterface
@@ -78,5 +85,27 @@ class UserService
         }
 
         throw new UsernameNotFoundException(UserMessagesService::USER_NOTFOUND, 1516335645);
+    }
+
+    /**
+     * @param array $data
+     * @return object
+     * @throws UsernameNotFoundException
+     * @throws \Trello\User\Exception\EmailIsNotValidException
+     * @throws \Trello\User\Exception\UserAlreadyRegisteredException
+     */
+    public function updateUser(array $data)
+    {
+        $currentUser = $this->userRepository->findUserByUsername($data['username']);
+
+        if($currentUser instanceof User){
+            $data['username'] = $data['newUsername'] ?? $data['username'];
+            $newUser = $this->userFactory->create($data);
+            $currentUser->update($newUser);
+
+            return $currentUser;
+        }
+
+        throw new UsernameNotFoundException(UserMessagesService::USER_NOTFOUND, 1518237162);
     }
 }

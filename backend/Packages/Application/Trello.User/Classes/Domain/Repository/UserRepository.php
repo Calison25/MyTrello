@@ -56,4 +56,21 @@ class UserRepository extends Repository
 
         return $result->execute()->getFirst();
     }
+
+    /**
+     * @param string $email
+     * @return object
+     */
+    public function findUserByEmail($email)
+    {
+        $query = $this->createQuery();
+
+        $result = $query->matching(
+            $query->logicalAnd([
+                $query->equals('credential.email', $email)
+            ])
+        );
+
+        return $result->execute()->getFirst();
+    }
 }

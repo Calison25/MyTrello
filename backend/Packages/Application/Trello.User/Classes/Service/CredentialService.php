@@ -70,4 +70,34 @@ class CredentialService
 
         return false;
     }
+
+    /**
+     * @param Credential $credential
+     * @return bool
+     */
+    public function usernameIsRegistered(Credential $credential)
+    {
+        $user = $this->userRepository->findUserByUsername($credential->getUsername());
+
+        if($user instanceof User){
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * @param Credential $credential
+     * @return bool
+     */
+    public function emailIsRegistered(Credential $credential)
+    {
+        $user = $this->userRepository->findUserByUsername($credential->getEmail());
+
+        if($user instanceof User){
+            return true;
+        }
+
+        return false;
+    }
 }

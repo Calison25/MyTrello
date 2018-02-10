@@ -18,13 +18,6 @@ use Trello\User\Service\UserService;
 
 class UserFactory
 {
-
-    /**
-     * @var UserService
-     * @Flow\Inject
-     */
-    protected $userService;
-
     /**
      * @var CredentialFactory
      * @Flow\Inject

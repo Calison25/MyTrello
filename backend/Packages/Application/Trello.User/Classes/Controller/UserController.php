@@ -81,25 +81,23 @@ class UserController extends ActionController
 
 
     /**
-     * @param User $user
      * @param array $data
+     * @return string
      */
-    public function updateAction(User $user, $data)
+    public function updateAction(array $data)
     {
         try{
-            $newUser = $this->userFactory->create($data);
-            $updatedUser = $user->update($newUser);
+            $updatedUser = $this->userService->updateUser($data);
 
-            $this->response->setStatus(200);
             $this->userRepository->update($updatedUser);
             $message = UserMessagesService::UPDATED_USER;
             $success = true;
         }catch (\Exception $e){
-            $this->response->setStatus(400);
             $message = $e->getMessage();
             $success = false;
         }
 
+        return $this->jsonViewFactory->create($message, $success);
     }
 
     /**
@@ -117,6 +115,6 @@ class UserController extends ActionController
             $message = $e->getMessage();
             $success = false;
         }
-        
+
     }
 }

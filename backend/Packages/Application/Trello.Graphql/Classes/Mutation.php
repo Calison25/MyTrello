@@ -71,10 +71,8 @@ class Mutation extends ObjectType
                         'password' => ['type' => Type::string()]
                     ],
                     'resolve' => function ($root_, array $args) {
-                        echo 'chega aqui!!';
-                        die;
-//                        $result = $this->userController->updateAction($args);
-//                        return $result;
+                        $result = $this->userController->updateAction($args);
+                        return $result;
                     },
                 ],
                 'deleteUser' => [
