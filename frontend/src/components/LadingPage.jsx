@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import {SignHeader} from "./Login/SignIn.jsx";
+import {SignInPath} from "./Login/SignIn.jsx";
+import {SignUpPath} from "./Login/SignUp.jsx";
 import { Switch, Route } from 'react-router-dom'
 
 class LadingPage extends Component {
     render() {
         return(
             <div className="LandingPage">
-                <SignHeader />
+              <SignInPath/>
+              <SignUpPath/>
             </div>
         );
     }

@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { Route,  Link, Switch, HashRouter as Router } from 'react-router-dom';
 
-export const SignHeader = () => (
+const SignInHeader = () => (
     <Router>
         <Link to='/signIn'>Sign In</Link>
     </Router>
 );
 
-const SignRoute = () => (
+const SignInRoute = () => (
     <Router>
-        <Switch>
-            <Route path='/signIn' component={SignIn}/>
-        </Switch>
+        <Route path='/signIn' component={SignIn}/>
     </Router>
+);
+
+export const SignInPath = () => (
+    <div className="signInPath">
+        <SignInHeader/>
+        <SignInRoute/>
+    </div>
 );
 
 class SignIn extends Component {
