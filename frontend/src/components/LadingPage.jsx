@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import SignInButton from "./Login/SignIn/SignInButton";
-import SignUpButton from "./Login/SignUp/SignUpButton";
-import SignOutButton from "./Login/SignOut/SignOutButton";
+import {SignHeader} from "./Login/SignIn.jsx";
+import { Switch, Route } from 'react-router-dom'
 
 class LadingPage extends Component {
     render() {
         return(
-            <div>
-                <SignInButton/>
-                <SignUpButton/>
-                <SignOutButton/>
+            <div className="LandingPage">
+                <SignHeader />
             </div>
         );
     }
