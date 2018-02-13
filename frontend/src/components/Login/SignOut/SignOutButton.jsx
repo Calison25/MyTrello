@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Route, Switch, HashRouter as Router } from 'react-router-dom';
-import ShowUser from "../../User/ShowUser";
+import SignOutAction from "./SignOutAction";
 
-class ShowUserButton extends Component {
+class SignOutButton extends Component {
     render() {
         return(
             <Router>
                 <Switch>
-                    <Route path='/user' component={ShowUser}/>
+                    <Route path='/signOut' component={SignOutAction}/>
                 </Switch>
             </Router>
         );
     }
 }
 
-export default ShowUserButton;
+export default SignOutButton;
