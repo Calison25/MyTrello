@@ -86,6 +86,23 @@ class Mutation extends ObjectType
                         return $result;
                     },
                 ],
+                'commandBus' => [
+                    'type' => Type::string(),
+                    'description' => 'CommandBus',
+                    'args' => [
+                        'name' => ['type' => Type::nonNull(Type::string())]
+                    ],
+                    'resolve' => function ($root_, $args) {
+                        $this->userController->useCommandBusForCommandClassAction($args['name']);
+                    },
+                ],
+                'commandBusController' => [
+                    'type' => Type::string(),
+                    'description' => 'CommandBus Controller',
+                    'resolve' => function ($root_, $args) {
+                        $this->userController->useCommandBusForCommandControllerAction();
+                    },
+                ],
             ],
         ]);
     }

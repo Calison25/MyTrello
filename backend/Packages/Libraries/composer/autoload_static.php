@@ -66,6 +66,10 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
             'Neos\\Cache\\' => 11,
             'Neos\\Behat\\' => 11,
         ),
+        'L' => 
+        array (
+            'League\\Tactician\\' => 17,
+        ),
         'G' => 
         array (
             'GraphQL\\' => 8,
@@ -202,6 +206,10 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         'Neos\\Behat\\' => 
         array (
             0 => __DIR__ . '/../../..' . '/Packages/Application/Neos.Behat/Classes',
+        ),
+        'League\\Tactician\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/tactician/src',
         ),
         'GraphQL\\' => 
         array (

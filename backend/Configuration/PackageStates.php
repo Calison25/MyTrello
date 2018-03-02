@@ -648,6 +648,23 @@ return array (
       array (
       ),
     ),
+    'league/tactician' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'league.tactician',
+      'packagePath' => 'Libraries/league/tactician/',
+      'composerName' => 'league/tactician',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'League\\Tactician\\' => 'src',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'phpdocumentor/reflection-common' => 
     array (
       'state' => 'active',
@@ -753,23 +770,6 @@ return array (
         'psr-0' => 
         array (
           'Gedmo\\' => 'lib/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'theseer/tokenizer' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'theseer.tokenizer',
-      'packagePath' => 'Libraries/theseer/tokenizer/',
-      'composerName' => 'theseer/tokenizer',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 
@@ -950,6 +950,23 @@ return array (
         'psr-4' => 
         array (
           'Trello\\Helper\\' => 'Classes/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'theseer/tokenizer' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'theseer.tokenizer',
+      'packagePath' => 'Libraries/theseer/tokenizer/',
+      'composerName' => 'theseer/tokenizer',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 

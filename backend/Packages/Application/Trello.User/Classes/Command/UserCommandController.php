@@ -14,11 +14,8 @@ use Trello\User\Domain\Model\User;
  */
 class UserCommandController extends CommandController
 {
-
-
-    public function testeCommand()
+    public function userCommand()
     {
-        $class = User::class;
-        $object = new $class();
+       echo 'Command Bus chamando um command controller';
     }
 }

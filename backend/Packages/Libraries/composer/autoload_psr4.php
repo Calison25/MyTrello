@@ -34,6 +34,7 @@ return array(
     'Neos\\ComposerPlugin\\' => array($vendorDir . '/neos/composer-plugin/Classes'),
     'Neos\\Cache\\' => array($vendorDir . '/neos/cache/Classes'),
     'Neos\\Behat\\' => array($baseDir . '/Packages/Application/Neos.Behat/Classes'),
+    'League\\Tactician\\' => array($vendorDir . '/league/tactician/src'),
     'GraphQL\\' => array($vendorDir . '/webonyx/graphql-php/src'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\DBAL\\Migrations\\' => array($vendorDir . '/doctrine/migrations/lib/Doctrine/DBAL/Migrations'),

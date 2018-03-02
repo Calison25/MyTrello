@@ -23,6 +23,7 @@ final class Versions
   'doctrine/migrations' => 'v1.3.1@fda27fc96d20a1abd46d4526387c7d6d416da263',
   'doctrine/orm' => 'v2.5.14@810a7baf81462a5ddf10e8baa8cb94b6eec02754',
   'gedmo/doctrine-extensions' => 'v2.4.32@a268224b312353be62d72e6390a286f4166a7542',
+  'league/tactician' => 'v1.0.3@d0339e22fd9252fb0fa53102b488d2c514483b8a',
   'neos/cache' => '4.2.6@cbf09dcb2317e10ee7679a24a9dbbe1d3c4f421f',
   'neos/composer-plugin' => '2.0.1@cd20e3c9b548127f4fa1e0f31662072bf82250d4',
   'neos/eel' => '4.2.6@4b560851677f30fb2a4ffedf7a663ddb36e57293',
@@ -84,7 +85,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.1.0@cb2f008f3f05af2893a87208fe6a6c4985483f8b',
   'webmozart/assert' => '1.2.0@2db61e59ff05fe5126d152bd0655c9ea113e550f',
-  'neos/flow-base-distribution' => 'dev-master@e89117424677a544036406a15ca5779cd573f629',
+  'neos/flow-base-distribution' => 'dev-master@13c7c6e91c0a1510f552050155c1d9ad5ad87c4c',
 );
 
     private function __construct()
