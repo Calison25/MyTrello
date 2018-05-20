@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname(dirname($vendorDir));
 
 return array(
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'Zend\\EventManager\\' => array($vendorDir . '/zendframework/zend-eventmanager/src'),
     'Zend\\Code\\' => array($vendorDir . '/zendframework/zend-code/src'),
     'Wwwision\\GraphQL\\' => array($baseDir . '/Packages/Application/Wwwision.GraphQL/Classes'),
@@ -24,7 +24,7 @@ return array(
     'Neos\\Welcome\\' => array($baseDir . '/Packages/Application/Neos.Welcome/Classes'),
     'Neos\\Utility\\Unicode\\' => array($vendorDir . '/neos/utility-unicode/Classes'),
     'Neos\\Utility\\Lock\\' => array($vendorDir . '/neos/utility-lock/Classes'),
-    'Neos\\Utility\\' => array($vendorDir . '/neos/utility-schema/Classes', $vendorDir . '/neos/utility-pdo/Classes', $vendorDir . '/neos/utility-opcodecache/Classes', $vendorDir . '/neos/utility-objecthandling/Classes', $vendorDir . '/neos/utility-mediatypes/Classes', $vendorDir . '/neos/utility-files/Classes', $vendorDir . '/neos/utility-arrays/Classes'),
+    'Neos\\Utility\\' => array($vendorDir . '/neos/utility-arrays/Classes', $vendorDir . '/neos/utility-files/Classes', $vendorDir . '/neos/utility-mediatypes/Classes', $vendorDir . '/neos/utility-objecthandling/Classes', $vendorDir . '/neos/utility-opcodecache/Classes', $vendorDir . '/neos/utility-pdo/Classes', $vendorDir . '/neos/utility-schema/Classes'),
     'Neos\\Kickstarter\\' => array($baseDir . '/Packages/Framework/Neos.Kickstarter/Classes'),
     'Neos\\FluidAdaptor\\' => array($baseDir . '/Packages/Framework/Neos.FluidAdaptor/Classes'),
     'Neos\\Flow\\Core\\Migrations\\' => array($baseDir . '/Packages/Framework/Neos.Flow/Scripts/Migrations'),
@@ -34,7 +34,11 @@ return array(
     'Neos\\ComposerPlugin\\' => array($vendorDir . '/neos/composer-plugin/Classes'),
     'Neos\\Cache\\' => array($vendorDir . '/neos/cache/Classes'),
     'Neos\\Behat\\' => array($baseDir . '/Packages/Application/Neos.Behat/Classes'),
+    'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
+    'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
+    'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'GraphQL\\' => array($vendorDir . '/webonyx/graphql-php/src'),
+    'Gedmo\\' => array($vendorDir . '/gedmo/doctrine-extensions/lib/Gedmo'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\DBAL\\Migrations\\' => array($vendorDir . '/doctrine/migrations/lib/Doctrine/DBAL/Migrations'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),

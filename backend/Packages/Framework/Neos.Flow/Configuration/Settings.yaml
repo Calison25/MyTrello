@@ -261,6 +261,8 @@ Neos:
         # The locales identifiers to use in their desired order
         order: []
 
+      globalTranslationPath: '%FLOW_PATH_DATA%Translations/'
+
       scan:
         # You can list any paths that you want to include in scanning for locales relative to the "Resources"
         # directory of each package. Setting a path to FALSE will skip scanning this folder.
@@ -353,7 +355,10 @@ Neos:
         # Doctrine ORM Lifecycle events and their subscribers and listeners.
         # See Flow manual, chapter "Persistence" for further information on how to subscribe to Doctrine events.
         eventSubscribers: []
-        eventListeners: []
+        eventListeners:
+          'Neos\Flow\Persistence\Doctrine\ObjectValidationAndDeDuplicationListener':
+            events: ['onFlush']
+            listener: 'Neos\Flow\Persistence\Doctrine\ObjectValidationAndDeDuplicationListener'
 
         secondLevelCache: []
 

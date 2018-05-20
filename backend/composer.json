@@ -20,7 +20,8 @@
         "neos/welcome": "~4.2.0",
         "gedmo/doctrine-extensions": "^2.4",
         "webonyx/graphql-php": "0.9.14",
-        "wwwision/graphql": "^2.1"
+        "wwwision/graphql": "^2.1",
+        "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
         "neos/kickstarter": "~4.2.0",

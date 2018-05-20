@@ -10,7 +10,10 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c594688b3441835d5575f3085da4a242' => __DIR__ . '/..' . '/webonyx/graphql-php/src/deprecated.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -68,7 +71,11 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         ),
         'G' => 
         array (
+            'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
             'GraphQL\\' => 8,
+            'Gedmo\\' => 6,
         ),
         'D' => 
         array (
@@ -86,8 +93,8 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Zend\\EventManager\\' => 
         array (
@@ -159,13 +166,13 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         ),
         'Neos\\Utility\\' => 
         array (
-            0 => __DIR__ . '/..' . '/neos/utility-schema/Classes',
-            1 => __DIR__ . '/..' . '/neos/utility-pdo/Classes',
-            2 => __DIR__ . '/..' . '/neos/utility-opcodecache/Classes',
+            0 => __DIR__ . '/..' . '/neos/utility-arrays/Classes',
+            1 => __DIR__ . '/..' . '/neos/utility-files/Classes',
+            2 => __DIR__ . '/..' . '/neos/utility-mediatypes/Classes',
             3 => __DIR__ . '/..' . '/neos/utility-objecthandling/Classes',
-            4 => __DIR__ . '/..' . '/neos/utility-mediatypes/Classes',
-            5 => __DIR__ . '/..' . '/neos/utility-files/Classes',
-            6 => __DIR__ . '/..' . '/neos/utility-arrays/Classes',
+            4 => __DIR__ . '/..' . '/neos/utility-opcodecache/Classes',
+            5 => __DIR__ . '/..' . '/neos/utility-pdo/Classes',
+            6 => __DIR__ . '/..' . '/neos/utility-schema/Classes',
         ),
         'Neos\\Kickstarter\\' => 
         array (
@@ -203,9 +210,25 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
         array (
             0 => __DIR__ . '/../../..' . '/Packages/Application/Neos.Behat/Classes',
         ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
         'GraphQL\\' => 
         array (
             0 => __DIR__ . '/..' . '/webonyx/graphql-php/src',
+        ),
+        'Gedmo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gedmo/doctrine-extensions/lib/Gedmo',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -254,13 +277,6 @@ class ComposerStaticInit860f79d287d8f7dd6cddd6f2624e5c23
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
-            ),
-        ),
-        'G' => 
-        array (
-            'Gedmo\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/gedmo/doctrine-extensions/lib',
             ),
         ),
         'D' => 

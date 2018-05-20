@@ -648,123 +648,63 @@ return array (
       array (
       ),
     ),
-    'phpdocumentor/reflection-common' => 
+    'sebastian/recursion-context' => 
     array (
       'state' => 'active',
-      'packageKey' => 'phpdocumentor.reflectioncommon',
-      'packagePath' => 'Libraries/phpdocumentor/reflection-common/',
-      'composerName' => 'phpdocumentor/reflection-common',
+      'packageKey' => 'sebastian.recursioncontext',
+      'packagePath' => 'Libraries/sebastian/recursion-context/',
+      'composerName' => 'sebastian/recursion-context',
       'autoloadConfiguration' => 
       array (
-        'psr-4' => 
+        'classmap' => 
         array (
-          'phpDocumentor\\Reflection\\' => 
-          array (
-            0 => 'src',
-          ),
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 
       array (
       ),
     ),
-    'phpdocumentor/type-resolver' => 
+    'sebastian/exporter' => 
     array (
       'state' => 'active',
-      'packageKey' => 'phpdocumentor.typeresolver',
-      'packagePath' => 'Libraries/phpdocumentor/type-resolver/',
-      'composerName' => 'phpdocumentor/type-resolver',
+      'packageKey' => 'sebastian.exporter',
+      'packagePath' => 'Libraries/sebastian/exporter/',
+      'composerName' => 'sebastian/exporter',
       'autoloadConfiguration' => 
       array (
-        'psr-4' => 
+        'classmap' => 
         array (
-          'phpDocumentor\\Reflection\\' => 
-          array (
-            0 => 'src/',
-          ),
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 
       array (
       ),
     ),
-    'webmozart/assert' => 
+    'sebastian/global-state' => 
     array (
       'state' => 'active',
-      'packageKey' => 'webmozart.assert',
-      'packagePath' => 'Libraries/webmozart/assert/',
-      'composerName' => 'webmozart/assert',
+      'packageKey' => 'sebastian.globalstate',
+      'packagePath' => 'Libraries/sebastian/global-state/',
+      'composerName' => 'sebastian/global-state',
       'autoloadConfiguration' => 
       array (
-        'psr-4' => 
+        'classmap' => 
         array (
-          'Webmozart\\Assert\\' => 'src/',
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 
       array (
       ),
     ),
-    'phpdocumentor/reflection-docblock' => 
+    'sebastian/object-reflector' => 
     array (
       'state' => 'active',
-      'packageKey' => 'phpdocumentor.reflectiondocblock',
-      'packagePath' => 'Libraries/phpdocumentor/reflection-docblock/',
-      'composerName' => 'phpdocumentor/reflection-docblock',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'phpDocumentor\\Reflection\\' => 
-          array (
-            0 => 'src/',
-          ),
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'behat/transliterator' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'Behat.Transliterator',
-      'packagePath' => 'Libraries/behat/transliterator/',
-      'composerName' => 'behat/transliterator',
-      'autoloadConfiguration' => 
-      array (
-        'psr-0' => 
-        array (
-          'Behat\\Transliterator' => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'gedmo/doctrine-extensions' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'gedmo.doctrineextensions',
-      'packagePath' => 'Libraries/gedmo/doctrine-extensions/',
-      'composerName' => 'gedmo/doctrine-extensions',
-      'autoloadConfiguration' => 
-      array (
-        'psr-0' => 
-        array (
-          'Gedmo\\' => 'lib/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'theseer/tokenizer' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'theseer.tokenizer',
-      'packagePath' => 'Libraries/theseer/tokenizer/',
-      'composerName' => 'theseer/tokenizer',
+      'packageKey' => 'sebastian.objectreflector',
+      'packagePath' => 'Libraries/sebastian/object-reflector/',
+      'composerName' => 'sebastian/object-reflector',
       'autoloadConfiguration' => 
       array (
         'classmap' => 
@@ -854,51 +794,17 @@ return array (
         'pathAndFilename' => 'Classes/Package.php',
       ),
     ),
-    'wwwision/graphql' => 
+    'trello/helper' => 
     array (
       'state' => 'active',
-      'packageKey' => 'Wwwision.GraphQL',
-      'packagePath' => 'Application/Wwwision.GraphQL/',
-      'composerName' => 'wwwision/graphql',
+      'packageKey' => 'Trello.Helper',
+      'packagePath' => 'Application/Trello.Helper/',
+      'composerName' => 'trello/helper',
       'autoloadConfiguration' => 
       array (
         'psr-4' => 
         array (
-          'Wwwision\\GraphQL\\' => 'Classes',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'trello/graphql' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'Trello.Graphql',
-      'packagePath' => 'Application/Trello.Graphql/',
-      'composerName' => 'trello/graphql',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'Trello\\Graphql\\' => 'Classes/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'neos/welcome' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'Neos.Welcome',
-      'packagePath' => 'Application/Neos.Welcome/',
-      'composerName' => 'neos/welcome',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'Neos\\Welcome\\' => 'Classes',
+          'Trello\\Helper\\' => 'Classes/',
         ),
       ),
       'packageClassInformation' => 
@@ -922,6 +828,57 @@ return array (
       array (
       ),
     ),
+    'wwwision/graphql' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Wwwision.GraphQL',
+      'packagePath' => 'Application/Wwwision.GraphQL/',
+      'composerName' => 'wwwision/graphql',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Wwwision\\GraphQL\\' => 'Classes',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'neos/welcome' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Neos.Welcome',
+      'packagePath' => 'Application/Neos.Welcome/',
+      'composerName' => 'neos/welcome',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Neos\\Welcome\\' => 'Classes',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'trello/graphql' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Trello.Graphql',
+      'packagePath' => 'Application/Trello.Graphql/',
+      'composerName' => 'trello/graphql',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Trello\\Graphql\\' => 'Classes/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'trello/user' => 
     array (
       'state' => 'active',
@@ -939,165 +896,12 @@ return array (
       array (
       ),
     ),
-    'trello/helper' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'Trello.Helper',
-      'packagePath' => 'Application/Trello.Helper/',
-      'composerName' => 'trello/helper',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'Trello\\Helper\\' => 'Classes/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/recursion-context' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.recursioncontext',
-      'packagePath' => 'Libraries/sebastian/recursion-context/',
-      'composerName' => 'sebastian/recursion-context',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/exporter' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.exporter',
-      'packagePath' => 'Libraries/sebastian/exporter/',
-      'composerName' => 'sebastian/exporter',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/resource-operations' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.resourceoperations',
-      'packagePath' => 'Libraries/sebastian/resource-operations/',
-      'composerName' => 'sebastian/resource-operations',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/version' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.version',
-      'packagePath' => 'Libraries/sebastian/version/',
-      'composerName' => 'sebastian/version',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'sebastian/diff' => 
     array (
       'state' => 'active',
       'packageKey' => 'sebastian.diff',
       'packagePath' => 'Libraries/sebastian/diff/',
       'composerName' => 'sebastian/diff',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/comparator' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.comparator',
-      'packagePath' => 'Libraries/sebastian/comparator/',
-      'composerName' => 'sebastian/comparator',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/object-reflector' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.objectreflector',
-      'packagePath' => 'Libraries/sebastian/object-reflector/',
-      'composerName' => 'sebastian/object-reflector',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/object-enumerator' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.objectenumerator',
-      'packagePath' => 'Libraries/sebastian/object-enumerator/',
-      'composerName' => 'sebastian/object-enumerator',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/code-unit-reverse-lookup' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.codeunitreverselookup',
-      'packagePath' => 'Libraries/sebastian/code-unit-reverse-lookup/',
-      'composerName' => 'sebastian/code-unit-reverse-lookup',
       'autoloadConfiguration' => 
       array (
         'classmap' => 
@@ -1126,12 +930,80 @@ return array (
       array (
       ),
     ),
-    'sebastian/global-state' => 
+    'sebastian/object-enumerator' => 
     array (
       'state' => 'active',
-      'packageKey' => 'sebastian.globalstate',
-      'packagePath' => 'Libraries/sebastian/global-state/',
-      'composerName' => 'sebastian/global-state',
+      'packageKey' => 'sebastian.objectenumerator',
+      'packagePath' => 'Libraries/sebastian/object-enumerator/',
+      'composerName' => 'sebastian/object-enumerator',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/version' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.version',
+      'packagePath' => 'Libraries/sebastian/version/',
+      'composerName' => 'sebastian/version',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/resource-operations' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.resourceoperations',
+      'packagePath' => 'Libraries/sebastian/resource-operations/',
+      'composerName' => 'sebastian/resource-operations',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/code-unit-reverse-lookup' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.codeunitreverselookup',
+      'packagePath' => 'Libraries/sebastian/code-unit-reverse-lookup/',
+      'composerName' => 'sebastian/code-unit-reverse-lookup',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/comparator' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.comparator',
+      'packagePath' => 'Libraries/sebastian/comparator/',
+      'composerName' => 'sebastian/comparator',
       'autoloadConfiguration' => 
       array (
         'classmap' => 
@@ -1160,6 +1032,117 @@ return array (
       array (
       ),
     ),
+    'behat/transliterator' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Behat.Transliterator',
+      'packagePath' => 'Libraries/behat/transliterator/',
+      'composerName' => 'behat/transliterator',
+      'autoloadConfiguration' => 
+      array (
+        'psr-0' => 
+        array (
+          'Behat\\Transliterator' => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'gedmo/doctrine-extensions' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'gedmo.doctrineextensions',
+      'packagePath' => 'Libraries/gedmo/doctrine-extensions/',
+      'composerName' => 'gedmo/doctrine-extensions',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Gedmo\\' => 'lib/Gedmo',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'phpdocumentor/reflection-common' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'phpdocumentor.reflectioncommon',
+      'packagePath' => 'Libraries/phpdocumentor/reflection-common/',
+      'composerName' => 'phpdocumentor/reflection-common',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'phpDocumentor\\Reflection\\' => 
+          array (
+            0 => 'src',
+          ),
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'phpdocumentor/type-resolver' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'phpdocumentor.typeresolver',
+      'packagePath' => 'Libraries/phpdocumentor/type-resolver/',
+      'composerName' => 'phpdocumentor/type-resolver',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'phpDocumentor\\Reflection\\' => 
+          array (
+            0 => 'src/',
+          ),
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'webmozart/assert' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'webmozart.assert',
+      'packagePath' => 'Libraries/webmozart/assert/',
+      'composerName' => 'webmozart/assert',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Webmozart\\Assert\\' => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'phpdocumentor/reflection-docblock' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'phpdocumentor.reflectiondocblock',
+      'packagePath' => 'Libraries/phpdocumentor/reflection-docblock/',
+      'composerName' => 'phpdocumentor/reflection-docblock',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'phpDocumentor\\Reflection\\' => 
+          array (
+            0 => 'src/',
+          ),
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'myclabs/deep-copy' => 
     array (
       'state' => 'active',
@@ -1175,6 +1158,86 @@ return array (
         'files' => 
         array (
           0 => 'src/DeepCopy/deep_copy.php',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'theseer/tokenizer' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'theseer.tokenizer',
+      'packagePath' => 'Libraries/theseer/tokenizer/',
+      'composerName' => 'theseer/tokenizer',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'guzzlehttp/promises' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'guzzlehttp.promises',
+      'packagePath' => 'Libraries/guzzlehttp/promises/',
+      'composerName' => 'guzzlehttp/promises',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'GuzzleHttp\\Promise\\' => 'src/',
+        ),
+        'files' => 
+        array (
+          0 => 'src/functions_include.php',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'guzzlehttp/psr7' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'guzzlehttp.psr7',
+      'packagePath' => 'Libraries/guzzlehttp/psr7/',
+      'composerName' => 'guzzlehttp/psr7',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'GuzzleHttp\\Psr7\\' => 'src/',
+        ),
+        'files' => 
+        array (
+          0 => 'src/functions_include.php',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'guzzlehttp/guzzle' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'guzzlehttp.guzzle',
+      'packagePath' => 'Libraries/guzzlehttp/guzzle/',
+      'composerName' => 'guzzlehttp/guzzle',
+      'autoloadConfiguration' => 
+      array (
+        'files' => 
+        array (
+          0 => 'src/functions_include.php',
+        ),
+        'psr-4' => 
+        array (
+          'GuzzleHttp\\' => 'src/',
         ),
       ),
       'packageClassInformation' => 
