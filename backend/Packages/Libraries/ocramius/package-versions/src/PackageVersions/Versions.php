@@ -12,13 +12,13 @@ final class Versions
 {
     const VERSIONS = array (
   'behat/transliterator' => 'v1.2.0@826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c',
-  'doctrine/annotations' => 'v1.6.0@c7f2050c68a9ab0bdb0f98567ec08d80ea7d24d5',
-  'doctrine/cache' => 'v1.7.1@b3217d58609e9c8e661cd41357a54d926c4a2a1a',
-  'doctrine/collections' => 'v1.5.0@a01ee38fcd999f34d9bfbcee59dbda5105449cbf',
+  'doctrine/annotations' => 'v1.4.0@54cacc9b81758b14e3ce750f205a393d52339e97',
+  'doctrine/cache' => 'v1.6.2@eb152c5100571c7a45470ff2a35095ab3f3b900b',
+  'doctrine/collections' => 'v1.4.0@1a4fb7e902202c33cce8c55989b945612943c2ba',
   'doctrine/common' => 'v2.7.3@4acb8f89626baafede6ee5475bc5844096eba8a9',
   'doctrine/dbal' => 'v2.5.13@729340d8d1eec8f01bff708e12e449a3415af873',
-  'doctrine/inflector' => 'v1.3.0@5527a48b7313d15261292c149e55e26eae771b0a',
-  'doctrine/instantiator' => '1.1.0@185b8868aa9bf7159f5f953ed5afb2d7fcdc3bda',
+  'doctrine/inflector' => 'v1.2.0@e11d84c6e018beedd929cff5220969a3c6d1d462',
+  'doctrine/instantiator' => '1.0.5@8e884e78f9f0eb1329e445619e04456e64d8051d',
   'doctrine/lexer' => 'v1.0.1@83893c552fd2045dd78aef794c31e694c37c0b8c',
   'doctrine/migrations' => 'v1.3.1@fda27fc96d20a1abd46d4526387c7d6d416da263',
   'doctrine/orm' => 'v2.5.14@810a7baf81462a5ddf10e8baa8cb94b6eec02754',
@@ -42,8 +42,8 @@ final class Versions
   'neos/utility-schema' => '4.2.10@fbf6010f55a34f12de689bcbfee1e4eba28c166b',
   'neos/utility-unicode' => '4.2.10@5422f00ef5d5d532d2391268c4caec81ebeb46af',
   'neos/welcome' => '4.2.0@33137b99e1e5329fd7d1a6696a154a62b560e0da',
-  'ocramius/package-versions' => '1.3.0@4489d5002c49d55576fa0ba786f42dbb009be46f',
-  'ocramius/proxy-manager' => '2.2.0@81d53b2878f1d1c40ad27270e64b51798485dfc5',
+  'ocramius/package-versions' => '1.2.0@ad8a245decad4897cc6b432743913dad0d69753c',
+  'ocramius/proxy-manager' => '2.0.4@a55d08229f4f614bf335759ed0cf63378feeb2e6',
   'paragonie/random_compat' => 'v2.0.12@258c89a6b97de7dfaf5b8c7607d0478e236b04fb',
   'psr/http-message' => '1.0.1@f6561bf28d520154e4b0ec72be95418abe6d9363',
   'psr/log' => '1.0.2@4ebe3a8bf773a19edfe0a84b6585ba3d401b724d',
@@ -56,7 +56,7 @@ final class Versions
   'typo3fluid/fluid' => '2.1.3@52ccc0a1d4f1039b95a289dc44b2f6885a463799',
   'webonyx/graphql-php' => 'v0.9.14@ed6629130869893e6efb5757dab5812def357bce',
   'wwwision/graphql' => 'v2.1.0@5dbbcfcf941691a0e21441cebafbf549dd9395f0',
-  'zendframework/zend-code' => '3.3.0@6b1059db5b368db769e4392c6cb6cc139e56640d',
+  'zendframework/zend-code' => '3.1.0@2899c17f83a7207f2d7f53ec2f421204d3beea27',
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
   'mikey179/vfsStream' => 'v1.6.5@d5fec95f541d4d71c4823bb5e30cf9b9e5b96145',
   'myclabs/deep-copy' => '1.7.0@3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e',
@@ -87,7 +87,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.1.0@cb2f008f3f05af2893a87208fe6a6c4985483f8b',
   'webmozart/assert' => '1.3.0@0df1908962e7a3071564e857d86874dad1ef204a',
-  'neos/flow-base-distribution' => 'dev-master@9f7921222a22f4070e2d585e6e713466961c27c4',
+  'neos/flow-base-distribution' => 'dev-master@c03b9f6ac16482b37018942e0cf31e8f593211f8',
 );
 
     private function __construct()
