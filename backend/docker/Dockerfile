@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
-ENV REFRESHED_AT 2017-12-17
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ=America/Brazil
 
 RUN apt-get upgrade
 RUN apt-get update
@@ -15,12 +16,7 @@ RUN apt-get install -y php7.0-curl php7.0-dba php7.0-gd php7.0-gmp php7.0-imap p
 RUN apt-get install -y php7.0-ldap php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-odbc
 RUN apt-get install -y php7.0-pgsql php7.0-recode php7.0-snmp php7.0-soap php7.0-sqlite
 RUN apt-get install -y php7.0-tidy php7.0-xml php7.0-xmlrpc php7.0-xsl php7.0-zip
-RUN apt-get install -y php-gnupg php-imagick php-mongodb php-streams php-fxsl
-
-RUN export DEBIAN_FRONTEND=noninteractive
-RUN apt-get install -y tzdata
-RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
-
+RUN apt-get install -y php-gnupg php-imagick php-mongodb php-fxsl
 
 COPY trello_api/apache2/sites-available/trello.conf /etc/apache2/sites-available/000-default.conf
 COPY trello_api/root/.bashrc /root/.bashrc
