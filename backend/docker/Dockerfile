@@ -5,7 +5,7 @@ ENV REFRESHED_AT 2017-12-17
 RUN apt-get upgrade
 RUN apt-get update
 RUN apt-get install -y wkhtmltopdf xvfb libreoffice vim
-RUN apt-get install -y software-properties-common python-software-properties
+RUN apt-get install -y software-properties-common
 RUN LC_ALL=C.UTF-8 add-apt-repository -y -u ppa:ondrej/php
 RUN apt-get update
 RUN apt-get install -y apache2 acl
@@ -16,6 +16,10 @@ RUN apt-get install -y php7.0-ldap php7.0-mbstring php7.0-mcrypt php7.0-mysql ph
 RUN apt-get install -y php7.0-pgsql php7.0-recode php7.0-snmp php7.0-soap php7.0-sqlite
 RUN apt-get install -y php7.0-tidy php7.0-xml php7.0-xmlrpc php7.0-xsl php7.0-zip
 RUN apt-get install -y php-gnupg php-imagick php-mongodb php-streams php-fxsl
+
+RUN export DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y tzdata
+RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 
 
 COPY trello_api/apache2/sites-available/trello.conf /etc/apache2/sites-available/000-default.conf

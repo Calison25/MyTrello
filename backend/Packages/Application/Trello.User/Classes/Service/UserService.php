@@ -58,7 +58,6 @@ class UserService
     /**
      * @param $username
      * @return object
-     * @throws UsernameNotFoundException
      */
     public function getUserByUsername($username)
     {
