@@ -1,32 +1,32 @@
 import React, {Component} from 'react';
-import { Button } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import '../style/login.css';
 
 class Login extends Component {
     render() {
         return (
-            <div className="col-md-6 mb-4">
-                <div className="card near-moon-gradient form-white">
+            <Col md={6}>
+                <div className="card form-white">
                     <div className="card-body">
                         <form>
-                            <p className="h5 text-center mb-4">Sign in</p>
+                            <h3 className="text-center indigo-text font-bold py-4"><strong>Subscribe</strong></h3>
                             <div className="md-form">
-                                <i className="fa fa-envelope prefix white-tex"></i>
-                                <input type="text" id="form35" className="form-control" />
-                                    <label htmlFor="form35">Email</label>
+                                <i className="fa fa-envelope prefix white-text"/>
+                                <label htmlFor="form35">Email</label>
+                                <input type="text" id="form35" className="form-control"/>
                             </div>
                             <div className="md-form">
-                                <i className="fa fa-lock prefix grey-tex"></i>
-                                <input type="password" id="form25" className="form-control" />
+                                <i className="fa fa-lock prefix grey-tex"/>
                                 <label htmlFor="form25">Password</label>
+                                <input type="password" id="form25" className="form-control"/>
                             </div>
                             <div className="text-center py-4">
-                                <Button className="btn btn-indigo">Sign in <i className="fa fa-paper-plane-o ml-1"></i></Button>
+                                <Button className="btn btn-indigo">Sign in <i className="fa fa-paper-plane-o"/></Button>
                             </div>
                         </form>
                     </div>
                 </div>
-            </div>
+            </Col>
         );
     }
 }
