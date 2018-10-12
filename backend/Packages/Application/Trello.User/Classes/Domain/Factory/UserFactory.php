@@ -31,8 +31,6 @@ class UserFactory
     public function create($data)
     {
         $credential = $this->credentialFactory->create($data);
-        $newUser = new User($data['name'], $credential);
-
-        return $newUser;
+        return new User($data['name'], $credential);
     }
 }

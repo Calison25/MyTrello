@@ -1,31 +1,5 @@
-#
-# Example Settings
-#
-# This file can contain settings for your Flow application that override
-# the various defaults defined by other packages.
-#
-# Copy this file to Settings.yaml, and adjust as necessary.
-#
-# For possible configuration options you may refer to the packages'
-# default settings file(s) in the corresponding package directories (for
-# example, Packages/Framework/Neos.Flow/Configuration/Settings.yaml)
-# or read the fine manuals.
-
-Wwwision:
-  GraphQL:
-    endpoints:
-      api-graphql:
-        querySchema: Trello\Graphql\RootSchema
-        mutationSchema: Trello\Graphql\Mutation
-
 Neos:
   Flow:
-    mvc:
-      routes:
-        Wwwision.GraphQL:
-          variables:
-            endpoint: api-graphql
-
     persistence:
 
       # It is good practice to not specify user name and password of the database
