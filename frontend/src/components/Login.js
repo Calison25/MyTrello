@@ -1,32 +1,56 @@
 import React, {Component} from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import styled from 'styled-components';
 import '../style/login.css';
+
+const Div = styled.div`
+    margin-top: 50px;
+    margin-left: 200px;
+`;
+
+const DivPanel = styled.div`
+    padding-top: 30px;
+`;
+
+const DivInput = styled.div`
+    margin-bottom: 20px;
+`;
 
 class Login extends Component {
     render() {
         return (
-            <Col md={6}>
-                <div className="card form-white">
-                    <div className="card-body">
-                        <form>
-                            <h3 className="text-center indigo-text font-bold py-4"><strong>Subscribe</strong></h3>
-                            <div className="md-form">
-                                <i className="fa fa-envelope prefix white-text"/>
-                                <label htmlFor="form35">Email</label>
-                                <input type="text" id="form35" className="form-control"/>
-                            </div>
-                            <div className="md-form">
-                                <i className="fa fa-lock prefix grey-tex"/>
-                                <label htmlFor="form25">Password</label>
-                                <input type="password" id="form25" className="form-control"/>
-                            </div>
-                            <div className="text-center py-4">
-                                <Button className="btn btn-indigo">Sign in <i className="fa fa-paper-plane-o"/></Button>
-                            </div>
-                        </form>
+            <div className="container">
+               <Div className="btn btn-primary col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div className="panel panel-info">
+                        <div className="panel-heading">
+                            <h3 className="panel-title"><i className="fa fa-user"/> Login</h3>
+                        </div>
+
+                        <DivPanel className="btn panel-body">
+                            <form className="form-horizontal">
+                                <fieldset>
+                                    <DivInput className="control-group">
+                                        <label className="control-label" htmlFor="email"><i className="fa fa-envelope prefix white-text"/>  Email</label>
+                                        <div className="controls">
+                                           <input type="text" id="email" className="form-control"/>
+                                        </div>
+                                    </DivInput>
+                                    <DivInput className="control-group">
+                                        <label className="control-label" htmlFor="password"><i className="fa fa-lock prefix grey-tex"/> Password</label>
+                                        <div className="controls">
+                                           <input type="password" id="password" className="form-control"/>
+                                        </div>
+                                    </DivInput>
+                                    <div className="text-center py-4">
+                                        <Button className="btn btn-secondary">Sign in <i className="fa fa-paper-plane-o"/></Button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </DivPanel>
+
                     </div>
-                </div>
-            </Col>
+               </Div>
+            </div>
         );
     }
 }
