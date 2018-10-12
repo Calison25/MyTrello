@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Button } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import '../../style/login.css';
-import LoginError from "./LoginError";
 
 const Div = styled.div`
     margin-top: 50px;
@@ -17,7 +17,11 @@ const DivInput = styled.div`
     margin-bottom: 20px;
 `;
 
-
+const errorMessage = (
+    <div>
+        <i className="fa fa-exclamation-triangle"/><strong> Ops!!</strong> Todos os campos são obrigatórios
+    </div>
+);
 
 class Login extends Component {
     state = {
@@ -31,7 +35,7 @@ class Login extends Component {
     handleSubmit() {
         const { email, password } = this.state.form;
         if (email.length === 0 || password.length === 0){
-            this.setState({hasError: true});
+            toast.error(errorMessage);
         }
     }
 
@@ -41,7 +45,6 @@ class Login extends Component {
                <Div className="btn btn-primary col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div className="panel panel-info">
                         <div className="panel-heading">
-                            {this.state.hasError &&  <LoginError />}
                             <h3 className="panel-title"><i className="fa fa-user"/> Login</h3>
                         </div>
 
