@@ -11,18 +11,10 @@
         "docs": "https://flowframework.readthedocs.io/",
         "source": "https://github.com/neos/flow-base-distribution"
     },
-    "config": {
-        "vendor-dir": "Packages/Libraries",
-        "bin-dir": "bin",
-        "platform": {
-            "php": "7.0.23"
-        }
-    },
     "require": {
         "neos/flow": "~4.2.0",
         "neos/welcome": "~4.2.0",
         "gedmo/doctrine-extensions": "^2.4",
-        "webonyx/graphql-php": "0.9.14",
         "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {

@@ -504,74 +504,6 @@ return array (
       array (
       ),
     ),
-    'zendframework/zend-eventmanager' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'zendframework.zendeventmanager',
-      'packagePath' => 'Libraries/zendframework/zend-eventmanager/',
-      'composerName' => 'zendframework/zend-eventmanager',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'Zend\\EventManager\\' => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'zendframework/zend-code' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'zendframework.zendcode',
-      'packagePath' => 'Libraries/zendframework/zend-code/',
-      'composerName' => 'zendframework/zend-code',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'Zend\\Code\\' => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'ocramius/package-versions' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'ocramius.packageversions',
-      'packagePath' => 'Libraries/ocramius/package-versions/',
-      'composerName' => 'ocramius/package-versions',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'PackageVersions\\' => 'src/PackageVersions',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'ocramius/proxy-manager' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'ocramius.proxymanager',
-      'packagePath' => 'Libraries/ocramius/proxy-manager/',
-      'composerName' => 'ocramius/proxy-manager',
-      'autoloadConfiguration' => 
-      array (
-        'psr-0' => 
-        array (
-          'ProxyManager\\' => 'src',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'doctrine/migrations' => 
     array (
       'state' => 'active',
@@ -627,27 +559,6 @@ return array (
       array (
       ),
     ),
-    'webonyx/graphql-php' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'webonyx.graphqlphp',
-      'packagePath' => 'Libraries/webonyx/graphql-php/',
-      'composerName' => 'webonyx/graphql-php',
-      'autoloadConfiguration' => 
-      array (
-        'files' => 
-        array (
-          0 => 'src/deprecated.php',
-        ),
-        'psr-4' => 
-        array (
-          'GraphQL\\' => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'sebastian/recursion-context' => 
     array (
       'state' => 'active',
@@ -688,6 +599,40 @@ return array (
       'packageKey' => 'sebastian.globalstate',
       'packagePath' => 'Libraries/sebastian/global-state/',
       'composerName' => 'sebastian/global-state',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/object-reflector' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.objectreflector',
+      'packagePath' => 'Libraries/sebastian/object-reflector/',
+      'composerName' => 'sebastian/object-reflector',
+      'autoloadConfiguration' => 
+      array (
+        'classmap' => 
+        array (
+          0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'sebastian/diff' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'sebastian.diff',
+      'packagePath' => 'Libraries/sebastian/diff/',
+      'composerName' => 'sebastian/diff',
       'autoloadConfiguration' => 
       array (
         'classmap' => 
@@ -777,23 +722,6 @@ return array (
         'pathAndFilename' => 'Classes/Package.php',
       ),
     ),
-    'trello/user' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'Trello.User',
-      'packagePath' => 'Application/Trello.User/',
-      'composerName' => 'trello/user',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'Trello\\User\\' => 'Classes/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'neos/behat' => 
     array (
       'state' => 'active',
@@ -822,23 +750,6 @@ return array (
         'psr-4' => 
         array (
           'Trello\\Api\\' => 'Classes/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'wwwision/graphql' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'Wwwision.GraphQL',
-      'packagePath' => 'Application/Wwwision.GraphQL/',
-      'composerName' => 'wwwision/graphql',
-      'autoloadConfiguration' => 
-      array (
-        'psr-4' => 
-        array (
-          'Wwwision\\GraphQL\\' => 'Classes',
         ),
       ),
       'packageClassInformation' => 
@@ -879,51 +790,17 @@ return array (
       array (
       ),
     ),
-    'trello/graphql' => 
+    'trello/user' => 
     array (
       'state' => 'active',
-      'packageKey' => 'Trello.Graphql',
-      'packagePath' => 'Application/Trello.Graphql/',
-      'composerName' => 'trello/graphql',
+      'packageKey' => 'Trello.User',
+      'packagePath' => 'Application/Trello.User/',
+      'composerName' => 'trello/user',
       'autoloadConfiguration' => 
       array (
         'psr-4' => 
         array (
-          'Trello\\Graphql\\' => 'Classes/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/object-reflector' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.objectreflector',
-      'packagePath' => 'Libraries/sebastian/object-reflector/',
-      'composerName' => 'sebastian/object-reflector',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
-    'sebastian/diff' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.diff',
-      'packagePath' => 'Libraries/sebastian/diff/',
-      'composerName' => 'sebastian/diff',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
+          'Trello\\User\\' => 'Classes/',
         ),
       ),
       'packageClassInformation' => 
@@ -1181,6 +1058,23 @@ return array (
       array (
       ),
     ),
+    'ocramius/package-versions' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'ocramius.packageversions',
+      'packagePath' => 'Libraries/ocramius/package-versions/',
+      'composerName' => 'ocramius/package-versions',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'PackageVersions\\' => 'src/PackageVersions',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'theseer/tokenizer' => 
     array (
       'state' => 'active',
@@ -1192,6 +1086,40 @@ return array (
         'classmap' => 
         array (
           0 => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'zendframework/zend-eventmanager' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'zendframework.zendeventmanager',
+      'packagePath' => 'Libraries/zendframework/zend-eventmanager/',
+      'composerName' => 'zendframework/zend-eventmanager',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Zend\\EventManager\\' => 'src/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'zendframework/zend-code' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'zendframework.zendcode',
+      'packagePath' => 'Libraries/zendframework/zend-code/',
+      'composerName' => 'zendframework/zend-code',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Zend\\Code\\' => 'src/',
         ),
       ),
       'packageClassInformation' => 
