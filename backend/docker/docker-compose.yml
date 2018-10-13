@@ -8,7 +8,7 @@ services:
     volumes:
      - ..:/var/www/trello
   trello_db:
-    image: mysql:latest
+    image: mysql:5.7
     container_name: 'trello_db'
     ports:
       - "3001:3306"
