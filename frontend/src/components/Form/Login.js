@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Button } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
+import { signIn } from "../../routes/access";
 import '../../style/login.css';
 
 const Div = styled.div`
@@ -29,14 +30,21 @@ class Login extends Component {
             email: '',
             password: '',
         },
-        hasError: false
     };
 
-    handleSubmit() {
+    handleSubmit(event) {
         const { email, password } = this.state.form;
         if (email.length === 0 || password.length === 0){
             toast.error(errorMessage);
+            return;
         }
+
+        const data = {
+            email: email,
+            password: password
+        };
+
+        signIn(data);
     }
 
 

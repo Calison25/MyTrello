@@ -10,6 +10,7 @@ use Neos\Flow\Mvc\Controller\ActionController;
 use Neos\Flow\Mvc\View\JsonView;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
 use Trello\Helper\Domain\Factory\JsonViewFactory;
+use Trello\User\Domain\Factory\CredentialDtoFactory;
 use Trello\User\Domain\Factory\UserFactory;
 use Trello\User\Domain\Repository\UserRepository;
 use Trello\User\Service\UserMessagesService;
@@ -18,9 +19,19 @@ use Trello\User\Service\UserService;
 class AccessController extends ActionController
 {
 
-    public function signInAction()
+    /**
+     * @var CredentialDtoFactory
+     * @Flow\Inject
+     */
+    protected $credentialDtoFactory;
+
+    /**
+     * @param array $data
+     */
+    public function signInAction($data)
     {
-        echo 'funcionou!!';
+        $credentialDto = $this->credentialDtoFactory->create($data);
+        var_dump($credentialDto->getEmail());
         die;
     }
 }
