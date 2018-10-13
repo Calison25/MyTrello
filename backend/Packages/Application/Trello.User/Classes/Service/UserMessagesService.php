@@ -13,7 +13,6 @@ namespace Trello\User\Service;
 
 class UserMessagesService
 {
-
     const CREATE_USER = 'Usuário criado com sucesso';
 
     const UPDATED_USER = 'Usuário foi atualizado com sucesso';
@@ -27,4 +26,8 @@ class UserMessagesService
     const USER_DELETED = 'Usuário removido com sucesso';
 
     const USER_NOTFOUND = 'Username não encontrado no sistema';
+
+    const EMAIL_NOTFOUND = 'Email não encontrado no sistema';
+
+    const USER_IS_NOT_ALLOWED = 'Nome de e-mail e senha não coincidem, por favor verifique seus dados';
 }

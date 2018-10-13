@@ -26,13 +26,4 @@ class GeneralHelperService
 
         return true;
     }
-
-    /**
-     * @param string $content
-     * @return string
-     */
-    static public function removeBreaklinesFromString($content)
-    {
-        return str_replace(["\n","\r",PHP_EOL], "", $content);
-    }
 }

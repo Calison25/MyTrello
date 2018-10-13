@@ -39,12 +39,6 @@ class UserController extends ActionController
     protected $userFactory;
 
     /**
-     * @var JsonViewFactory
-     * @Flow\Inject
-     */
-    protected $jsonViewFactory;
-
-    /**
      * @var PersistenceManagerInterface
      * @Flow\Inject
      */
@@ -60,15 +54,8 @@ class UserController extends ActionController
             $createdUser = $this->userFactory->create($data);
             $this->userService->userIsValid($createdUser);
             $this->userRepository->add($createdUser);
-
-            $message = UserMessagesService::CREATE_USER;
-            $success = true;
         }catch (\Exception $e){
-            $message = $e->getMessage();
-            $success = false;
         }
-
-        return $this->jsonViewFactory->create($message, $success);
     }
 
 
@@ -82,11 +69,8 @@ class UserController extends ActionController
             $updatedUser = $this->userService->updateUser($data);
 
             $this->userRepository->update($updatedUser);
-            $message = UserMessagesService::UPDATED_USER;
-            $success = true;
         }catch (\Exception $e){
-            $message = $e->getMessage();
-            $success = false;
+
         }
 
         return $this->jsonViewFactory->create($message, $success);
@@ -101,13 +85,8 @@ class UserController extends ActionController
         try{
             $user = $this->userService->getUserByUsername($data['username']);
             $this->userRepository->remove($user);
-            $message = UserMessagesService::USER_DELETED;
-            $success = true;
         }catch (\Exception $e){
-            $message = $e->getMessage();
-            $success = false;
-        }
 
-        return $this->jsonViewFactory->create($message, $success);
+        }
     }
 }

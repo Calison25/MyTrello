@@ -33,6 +33,6 @@ class CredentialDtoFactory
     {
         $username = $data['username'] ?? '';
 
-        return new CredentialDto($data['email'], $data['passowrd'], $username);
+        return new CredentialDto($data['email'], md5($data['password']), $username);
     }
 }

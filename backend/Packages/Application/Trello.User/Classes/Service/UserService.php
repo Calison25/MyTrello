@@ -4,10 +4,12 @@ namespace Trello\User\Service;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
+use Trello\User\Domain\Dto\CredentialDto;
 use Trello\User\Domain\Factory\UserFactory;
 use Trello\User\Domain\Model\User;
 use Trello\User\Domain\Repository\UserRepository;
 use Trello\User\Domain\Repository\UserSearchRepository;
+use Trello\User\Exception\EmailNotFoundException;
 use Trello\User\Exception\UsernameNotFoundException;
 
 /**
@@ -71,19 +73,17 @@ class UserService
     }
 
     /**
-     * @param $username
-     * @return object
-     * @throws UsernameNotFoundException
+     * @param string $email
      */
-    public function getIdentifierByUsername($username)
+    public function getUserByEmail($email)
     {
-        $user = $this->userRepository->findUserByUsername($username);
+        $user = $this->userRepository->findUserByEmail($email);
 
         if($user instanceof User){
-            return $this->persistenceManager->getIdentifierByObject($user);
+            return $user;
         }
 
-        throw new UsernameNotFoundException(UserMessagesService::USER_NOTFOUND, 1516335645);
+        throw new EmailNotFoundException(UserMessagesService::EMAIL_NOTFOUND, 1539470771);
     }
 
     /**
@@ -106,5 +106,20 @@ class UserService
         }
 
         throw new UsernameNotFoundException(UserMessagesService::USER_NOTFOUND, 1518237162);
+    }
+
+    /**
+     * @param CredentialDto $credentialDto
+     * @return bool
+     */
+    public function userCanSignIn(CredentialDto $credentialDto)
+    {
+        $user = $this->userRepository->findUserByEmailAndPassword($credentialDto->getEmail(), $credentialDto->getPassword());
+
+        if (!$user instanceof User){
+            return false;
+        }
+
+        return true;
     }
 }
