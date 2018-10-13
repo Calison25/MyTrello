@@ -699,23 +699,6 @@ return array (
       array (
       ),
     ),
-    'sebastian/object-reflector' => 
-    array (
-      'state' => 'active',
-      'packageKey' => 'sebastian.objectreflector',
-      'packagePath' => 'Libraries/sebastian/object-reflector/',
-      'composerName' => 'sebastian/object-reflector',
-      'autoloadConfiguration' => 
-      array (
-        'classmap' => 
-        array (
-          0 => 'src/',
-        ),
-      ),
-      'packageClassInformation' => 
-      array (
-      ),
-    ),
     'neos/eel' => 
     array (
       'state' => 'active',
@@ -794,17 +777,17 @@ return array (
         'pathAndFilename' => 'Classes/Package.php',
       ),
     ),
-    'trello/helper' => 
+    'trello/user' => 
     array (
       'state' => 'active',
-      'packageKey' => 'Trello.Helper',
-      'packagePath' => 'Application/Trello.Helper/',
-      'composerName' => 'trello/helper',
+      'packageKey' => 'Trello.User',
+      'packagePath' => 'Application/Trello.User/',
+      'composerName' => 'trello/user',
       'autoloadConfiguration' => 
       array (
         'psr-4' => 
         array (
-          'Trello\\Helper\\' => 'Classes/',
+          'Trello\\User\\' => 'Classes/',
         ),
       ),
       'packageClassInformation' => 
@@ -828,6 +811,23 @@ return array (
       array (
       ),
     ),
+    'trello/api' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Trello.Api',
+      'packagePath' => 'Application/Trello.Api/',
+      'composerName' => 'trello/api',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Trello\\Api\\' => 'Classes/',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
     'wwwision/graphql' => 
     array (
       'state' => 'active',
@@ -839,6 +839,23 @@ return array (
         'psr-4' => 
         array (
           'Wwwision\\GraphQL\\' => 'Classes',
+        ),
+      ),
+      'packageClassInformation' => 
+      array (
+      ),
+    ),
+    'trello/helper' => 
+    array (
+      'state' => 'active',
+      'packageKey' => 'Trello.Helper',
+      'packagePath' => 'Application/Trello.Helper/',
+      'composerName' => 'trello/helper',
+      'autoloadConfiguration' => 
+      array (
+        'psr-4' => 
+        array (
+          'Trello\\Helper\\' => 'Classes/',
         ),
       ),
       'packageClassInformation' => 
@@ -879,17 +896,17 @@ return array (
       array (
       ),
     ),
-    'trello/user' => 
+    'sebastian/object-reflector' => 
     array (
       'state' => 'active',
-      'packageKey' => 'Trello.User',
-      'packagePath' => 'Application/Trello.User/',
-      'composerName' => 'trello/user',
+      'packageKey' => 'sebastian.objectreflector',
+      'packagePath' => 'Libraries/sebastian/object-reflector/',
+      'composerName' => 'sebastian/object-reflector',
       'autoloadConfiguration' => 
       array (
-        'psr-4' => 
+        'classmap' => 
         array (
-          'Trello\\User\\' => 'Classes/',
+          0 => 'src/',
         ),
       ),
       'packageClassInformation' => 

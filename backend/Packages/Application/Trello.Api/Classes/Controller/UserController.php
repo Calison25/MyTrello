@@ -1,8 +1,8 @@
 <?php
-namespace Trello\User\Controller;
+namespace Trello\Api\Controller;
 
 /*
- * This file is part of the Trello.User package.
+ * This file is part of the Trello.Api package.
  */
 
 use Neos\Flow\Annotations as Flow;
@@ -10,16 +10,8 @@ use Neos\Flow\Mvc\Controller\ActionController;
 use Neos\Flow\Mvc\View\JsonView;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
 use Trello\Helper\Domain\Factory\JsonViewFactory;
-use Trello\Helper\Domain\Factory\ViewFactory;
-use Trello\Helper\Service\RequestHelperService;
-use Trello\Helper\Service\ViewHelperService;
 use Trello\User\Domain\Factory\UserFactory;
-use Trello\User\Domain\Model\User;
 use Trello\User\Domain\Repository\UserRepository;
-use Trello\User\Domain\Repository\UserSearchRepository;
-use Trello\User\Exception\Exception;
-use Trello\User\Exception\UserAlreadyRegisteredException;
-use Trello\User\Exception\UsernameIsRequiredException;
 use Trello\User\Service\UserMessagesService;
 use Trello\User\Service\UserService;
 

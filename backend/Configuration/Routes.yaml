@@ -1,8 +1,19 @@
+### USER ####
 -
   name: 'Create user'
   uriPattern: 'create-user'
   defaults:
-    '@package': 'Trello.User'
+    '@package': 'Trello.Api'
     '@controller': 'User'
     '@action': 'create'
+  httpMethods: ['POST']
+
+### ACCESS ####
+-
+  name: 'Sign in'
+  uriPattern: 'sign-in'
+  defaults:
+    '@package': 'Trello.Api'
+    '@controller': 'Access'
+    '@action': 'signIn'
   httpMethods: ['POST']
