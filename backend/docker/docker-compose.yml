@@ -15,7 +15,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: senhaforte
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
+    image: phpmyadmin/phpmyadmin:4.6
     ports:
       - "2000:80"
     depends_on:
