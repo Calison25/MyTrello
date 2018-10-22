@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import '../style/login.css';
 import SignIn from "../components/Access/Form/SignIn";
-import {signIn} from "../routes/access";
+import { signIn } from "../routes/access";
 
 const Div = styled.div`
     margin-top: 50px;
