@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Login from "../components/Form/Login";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Login from "./Login";
 
 class Home extends Component {
     render() {
