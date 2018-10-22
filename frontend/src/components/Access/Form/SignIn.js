@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import '../../../style/login.css';
 
@@ -11,9 +12,9 @@ const DivInput = styled.div`
     margin-bottom: 20px;
 `;
 
-const errorMessage = (
+const errorMessage = (propertyName) => (
     <div>
-        <i className="fa fa-exclamation-triangle"/><strong> Ops!!</strong> Todos os campos são obrigatórios
+        <i className="fa fa-exclamation-triangle"/><strong> Ops!!</strong> {propertyName} é obrigatório.
     </div>
 );
 
@@ -36,19 +37,19 @@ class SignIn extends Component {
     };
 
     handleSubmit = event => {
-        // event.preventDefault();
-        // const { email, password } = this.props;
-        // if (email.length === 0 || password.length === 0){
-        //     toast.error(errorMessage);
-        //     return;
-        // }
-        //
-        // const data = {
-        //     email: email,
-        //     password: password
-        // };
-        //
-        // signIn(data);
+        event.preventDefault();
+        const { email, password } = this.state.values;
+        if (email.length === 0){
+            toast.error(errorMessage('email'));
+            return;
+        }
+
+        if (password.length === 0){
+            toast.error(errorMessage('password'));
+            return;
+        }
+
+        this.props.onSubmit(this.state.values);
     };
 
 
