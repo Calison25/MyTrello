@@ -4,6 +4,11 @@ import styled from 'styled-components';
 import '../../../style/login.css';
 
 
+const Div = styled.div`
+    margin-top: 50px;
+    margin-left: 200px;
+`;
+
 const DivPanel = styled.div`
     padding-top: 30px;
 `;
@@ -56,34 +61,39 @@ class SignIn extends Component {
     render() {
         const { values } = this.state;
         return (
-            <DivPanel className="btn panel-body">
-                <form className="form-horizontal" onSubmit={this.handleSubmit}>
-                    <DivInput className="control-group">
-                        <label className="control-label" htmlFor="email"><i className="fa fa-envelope prefix white-text"/> Email</label>
-                        <div className="controls">
-                            <input type="text"
-                                   className="form-control"
-                                   name="email"
-                                   onChange={this.handleChange.bind(this)}
-                                   value={values.email}
-                            />
+            <Div className="btn btn-primary col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <DivPanel className="btn panel-body">
+                    <form className="form-horizontal" onSubmit={this.handleSubmit}>
+                        <div className="panel-heading">
+                            <h3 className="panel-title"><i className="fa fa-user"/> Login</h3>
                         </div>
-                    </DivInput>
-                    <DivInput className="control-group">
-                        <label className="control-label" htmlFor="password"><i className="fa fa-lock prefix grey-tex"/> Password</label>
-                        <div className="controls">
-                            <input type="password"
-                                   name="password"
-                                   className="form-control"
-                                   onChange={this.handleChange.bind(this)}
-                            />
+                        <DivInput className="control-group">
+                            <label className="control-label" htmlFor="email"><i className="fa fa-envelope prefix white-text"/> Email</label>
+                            <div className="controls">
+                                <input type="text"
+                                       className="form-control"
+                                       name="email"
+                                       onChange={this.handleChange.bind(this)}
+                                       value={values.email}
+                                />
+                            </div>
+                        </DivInput>
+                        <DivInput className="control-group">
+                            <label className="control-label" htmlFor="password"><i className="fa fa-lock prefix grey-tex"/> Password</label>
+                            <div className="controls">
+                                <input type="password"
+                                       name="password"
+                                       className="form-control"
+                                       onChange={this.handleChange.bind(this)}
+                                />
+                            </div>
+                        </DivInput>
+                        <div className="text-center py-4">
+                            <button type="submit" className="btn btn-secondary">Sign in <i className="fa fa-paper-plane-o"/></button>
                         </div>
-                    </DivInput>
-                    <div className="text-center py-4">
-                        <button type="submit" className="btn btn-secondary">Sign in <i className="fa fa-paper-plane-o"/></button>
-                    </div>
-                </form>
-            </DivPanel>
+                    </form>
+                </DivPanel>
+            </Div>
         );
     }
 }
