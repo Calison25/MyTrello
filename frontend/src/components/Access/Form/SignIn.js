@@ -34,7 +34,7 @@ class SignIn extends Component {
         };
     }
 
-    handleChange({ target }){
+    handleChange = ({ target }) => {
         this.setState({values: {
             ...this.state.values,
             [target.name]: target.value,
@@ -73,7 +73,7 @@ class SignIn extends Component {
                                 <input type="text"
                                        className="form-control"
                                        name="email"
-                                       onChange={this.handleChange.bind(this)}
+                                       onChange={this.handleChange}
                                        value={values.email}
                                 />
                             </div>
@@ -84,7 +84,7 @@ class SignIn extends Component {
                                 <input type="password"
                                        name="password"
                                        className="form-control"
-                                       onChange={this.handleChange.bind(this)}
+                                       onChange={this.handleChange}
                                 />
                             </div>
                         </DivInput>
